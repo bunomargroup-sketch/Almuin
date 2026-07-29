@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "version": 1,
+    "note": "Curated verses for daily rotation and situation-aware suggestions. Text per the mus'haf; brief notes are non-binding summaries."
+  },
+  "items": [
+    {
+      "id": "v_raad_28",
+      "surahNameAr": "الرعد",
+      "surahNumber": 13,
+      "ayahNumber": 28,
+      "arabic": "الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+      "translationEn": "Those who believe and whose hearts find rest in the remembrance of Allah. Verily, in the remembrance of Allah do hearts find rest.",
+      "tafsirBriefAr": "سكينة القلب الحقيقية لا تنال إلا بذكر الله؛ فالذكر دواء القلق ومطمأن النفوس.",
+      "tags": ["anxiety", "stress", "worry", "general"]
+    },
+    {
+      "id": "v_talaq_2_3",
+      "surahNameAr": "الطلاق",
+      "surahNumber": 65,
+      "ayahNumber": 2,
+      "arabic": "وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+      "translationEn": "Whoever fears Allah — He will make for him a way out, and provide for him from where he does not expect. And whoever relies upon Allah — He is sufficient for him.",
+      "tafsirBriefAr": "التقوى مفتاح الفرج والرزق، والتوكل كفاية لمن احتمى به.",
+      "tags": ["rizq", "relief", "worry", "tawakkul"]
+    },
+    {
+      "id": "v_sharh_5_6",
+      "surahNameAr": "الشرح",
+      "surahNumber": 94,
+      "ayahNumber": 5,
+      "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "translationEn": "So, surely with hardship comes ease — surely with that hardship comes more ease.",
+      "tafsirBriefAr": "وعدٌ مؤكد مكرر: لا يدوم الضيق، وبشارة الفرج ملازمة للصبر.",
+      "tags": ["sadness", "distress", "relief", "stress"]
+    },
+    {
+      "id": "v_baqarah_152",
+      "surahNameAr": "البقرة",
+      "surahNumber": 2,
+      "ayahNumber": 152,
+      "arabic": "فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ",
+      "translationEn": "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+      "tafsirBriefAr": "شرف عظيم: ذكرُ الله لعبده حين يذكره؛ والشكر سبب الزيادة.",
+      "tags": ["general", "gratitude"]
+    },
+    {
+      "id": "v_taaha_25_28",
+      "surahNameAr": "طه",
+      "surahNumber": 20,
+      "ayahNumber": 25,
+      "arabic": "قَالَ رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي ۝ وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي ۝ يَفْقَهُوا قَوْلِي",
+      "translationEn": "He said: My Lord, expand for me my chest, and ease for me my task, and untie the knot from my tongue so they may understand my words.",
+      "tafsirBriefAr": "دعاء موسى عليه السلام؛ يُستحب لمن أقبل على أمر عظيم كامتحان أو مقابلة أو خطبة.",
+      "tags": ["exam", "ease", "anxiety", "focus"]
+    },
+    {
+      "id": "v_ali_imran_134",
+      "surahNameAr": "آل عمران",
+      "surahNumber": 3,
+      "ayahNumber": 134,
+      "arabic": "الَّذِينَ يُنْفِقُونَ فِي السَّرَّاءِ وَالضَّرَّاءِ وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ",
+      "translationEn": "Who spend in prosperity and hardship, and who restrain anger, and who pardon people — and Allah loves the doers of good.",
+      "tafsirBriefAr": "كظم الغيظ من صفات المتقين المحسنين الذين يحبهم الله.",
+      "tags": ["anger", "patience"]
+    },
+    {
+      "id": "v_ibrahim_7",
+      "surahNameAr": "إبراهيم",
+      "surahNumber": 14,
+      "ayahNumber": 7,
+      "arabic": "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ",
+      "translationEn": "And when your Lord proclaimed: If you are grateful, I will surely increase you; but if you deny, indeed My punishment is severe.",
+      "tafsirBriefAr": "قانون الشكر: موصول النعم ومفتاح الزيادة.",
+      "tags": ["gratitude"]
+    },
+    {
+      "id": "v_shuara_80",
+      "surahNameAr": "الشعراء",
+      "surahNumber": 26,
+      "ayahNumber": 80,
+      "arabic": "وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ",
+      "translationEn": "And when I am sick, it is He who cures me — the words of Ibrahim, peace be upon him.",
+      "tafsirBriefAr": "الثقة بأن الشافي هو الله وحده؛ تطمين للمريض ولأهله.",
+      "tags": ["illness", "healing"]
+    },
+    {
+      "id": "v_anbiya_87",
+      "surahNameAr": "الأنبياء",
+      "surahNumber": 21,
+      "ayahNumber": 87,
+      "arabic": "وَذَا النُّونِ إِذْ ذَهَبَ مُغَاضِبًا فَظَنَّ أَنْ لَنْ نَقْدِرَ عَلَيْهِ فَنَادَى فِي الظُّلُمَاتِ أَنْ لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ ۝ فَاسْتَجَبْنَا لَهُ وَنَجَّيْنَاهُ مِنَ الْغَمِّ ۚ وَكَذَلِكَ نُنْجِي الْمُؤْمِنِينَ",
+      "translationEn": "And Dhun-Nun (Yunus), when he went off in anger... he called within the darknesses: There is no god but You; glory be to You! Indeed I have been of the wrongdoers. So We answered him and saved him from distress — and thus do We save the believers.",
+      "tafsirBriefAr": "دعوة الكرب التي نجّى الله بها يونس؛ وعدٌ بنجاة المؤمنين بمثلها.",
+      "tags": ["distress", "anxiety", "relief", "istighfar"]
+    },
+    {
+      "id": "v_zumar_53",
+      "surahNameAr": "الزمر",
+      "surahNumber": 39,
+      "ayahNumber": 53,
+      "arabic": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَى أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ",
+      "translationEn": "Say: O My servants who have transgressed against themselves, do not despair of Allah's mercy. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.",
+      "tafsirBriefAr": "أرجى آية في القرآن عند كثير من المفسرين — باب التوبة مفتوح دائمًا.",
+      "tags": ["sadness", "istighfar", "hope", "guilt"]
+    },
+    {
+      "id": "v_baqarah_286",
+      "surahNameAr": "البقرة",
+      "surahNumber": 2,
+      "ayahNumber": 286,
+      "arabic": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ",
+      "translationEn": "Allah does not charge a soul beyond its capacity. It will have what it has earned, and it will bear what it has acquired.",
+      "tafsirBriefAr": "ما ابتليتَ به فهو في طاقتك؛ فثق بربك وامضِ.",
+      "tags": ["stress", "distress", "strength", "anxiety"]
+    },
+    {
+      "id": "v_tawbah_51",
+      "surahNameAr": "التوبة",
+      "surahNumber": 9,
+      "ayahNumber": 51,
+      "arabic": "قُلْ لَنْ يُصِيبَنَا إِلَّا مَا كَتَبَ اللَّهُ لَنَا هُوَ مَوْلَانَا ۚ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ",
+      "translationEn": "Say: Never will we be struck except by what Allah has decreed for us; He is our protector. And upon Allah let the believers rely.",
+      "tafsirBriefAr": "يقين يُذهب رهبة المجهول؛ فما أصابك لم يكن ليخطئك.",
+      "tags": ["fear", "anxiety", "tawakkul"]
+    },
+    {
+      "id": "v_hud_6",
+      "surahNameAr": "هود",
+      "surahNumber": 11,
+      "ayahNumber": 6,
+      "arabic": "وَمَا مِنْ دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِي كِتَابٍ مُبِينٍ",
+      "translationEn": "And there is no creature on earth but that upon Allah is its provision, and He knows its place of dwelling and place of storage. All is in a clear register.",
+      "tafsirBriefAr": "الرزق مضمون بضمان الله؛ فاطمئن واسعَ بالحلال.",
+      "tags": ["rizq", "tawakkul", "relief"]
+    }
+  ]
+}

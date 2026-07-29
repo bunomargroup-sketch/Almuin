@@ -1,0 +1,75 @@
+name: almuin
+description: "Almuin (المُعين) — an intelligent personal Islamic dhikr assistant: smart reminders, authentic adhkar, tasbeeh, and a safety-first AI recommender."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Navigation
+  go_router: ^14.8.1
+
+  # Backend sync (optional — app is fully functional offline)
+  supabase_flutter: ^2.8.4
+
+  # Local persistence
+  sqflite: ^2.4.1
+  shared_preferences: ^2.5.2
+  path_provider: ^2.1.5
+  path: ^1.9.0
+
+  # Notifications & background work
+  flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.4
+  flutter_timezone: ^1.0.8
+  workmanager: ^0.5.2
+
+  # Islamic computations
+  adhan: ^2.0.0
+  hijri: ^3.0.0
+
+  # Device capabilities
+  geolocator: ^13.0.1
+  flutter_tts: ^4.2.2
+  connectivity_plus: ^6.1.1
+
+  # UX
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.2
+  fl_chart: ^0.69.0
+  share_plus: ^10.1.3
+
+  # Utils
+  intl: any
+  collection: ^1.19.0
+  equatable: ^2.0.7
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  test: ^1.25.8
+
+flutter:
+  uses-material-design: true
+  generate: true # flutter gen-l10n (lib/l10n/*.arb)
+
+  assets:
+    - assets/data/
+    # Optional premium assets — see README files inside each folder.
+    # A bundled soft chime enables a custom notification sound, and bundled
+    # Arabic fonts guarantee full offline typography on first launch.
+    - assets/sounds/
+    - assets/fonts/
+    - assets/images/

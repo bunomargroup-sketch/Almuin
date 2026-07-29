@@ -1,0 +1,33 @@
+# Almuin · Supabase project config
+project_id = "almuin"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+# Anonymous sign-ins let users save cloud progress without creating an
+# account — enable when you want cloud sync (app works fine without it).
+enable_anonymous_sign_ins = true
+
+[functions.ai-assistant]
+verify_jwt = false   # validates candidates itself; carries no user data
+
+[functions.daily-content]
+verify_jwt = false   # invoke via service-role from cron

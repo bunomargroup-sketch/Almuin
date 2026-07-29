@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "version": 1,
+    "note": "Daily hadith rotation — muttafaq 'alayhi or widely authenticated narrations only, each with collection and number."
+  },
+  "items": [
+    {
+      "id": "h_niyyah",
+      "arabic": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+      "translationEn": "Actions are only by intentions, and every person shall have only what he intended.",
+      "benefitAr": "الأساس الذي تُوزن به كل الأعمال — أول حديث في صحيح البخاري.",
+      "collection": "متفق عليه",
+      "number": "البخاري ١، مسلم ١٩٠٧",
+      "grade": "sahih",
+      "tags": ["general"]
+    },
+    {
+      "id": "h_kalimatan",
+      "arabic": "كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+      "translationEn": "Two phrases that are light on the tongue, heavy on the Scale, beloved to the Most Merciful: SubhanAllahi wa bihamdih, SubhanAllahil-'Azim.",
+      "benefitAr": "أيسر الأذكار نطقًا وأعظمها أجرًا — لا تفوّتها.",
+      "collection": "متفق عليه",
+      "number": "البخاري ٦٤٠٦، مسلم ٢٦٩٤",
+      "grade": "sahih",
+      "tags": ["tasbeeh", "general"]
+    },
+    {
+      "id": "h_teach_quran",
+      "arabic": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+      "translationEn": "The best of you are those who learn the Quran and teach it.",
+      "benefitAr": "أشرف مقام: رفيق القرآن تعلُّمًا وتعليمًا.",
+      "collection": "صحيح البخاري",
+      "number": "٥٠٢٧",
+      "grade": "sahih",
+      "tags": ["quran"]
+    },
+    {
+      "id": "h_love_brother",
+      "arabic": "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+      "translationEn": "None of you truly believes until he loves for his brother what he loves for himself.",
+      "benefitAr": "ميزان الإيمان العملي في التعامل مع الناس.",
+      "collection": "متفق عليه",
+      "number": "البخاري ١٣، مسلم ٤٥",
+      "grade": "sahih",
+      "tags": ["general"]
+    },
+    {
+      "id": "h_say_good",
+      "arabic": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+      "translationEn": "Whoever believes in Allah and the Last Day, let him speak good or remain silent.",
+      "benefitAr": "ضابط اللسان: إما خير وإما سكوت.",
+      "collection": "متفق عليه",
+      "number": "البخاري ٦٠١٨، مسلم ٤٧",
+      "grade": "sahih",
+      "tags": ["general", "anger"]
+    },
+    {
+      "id": "h_purity",
+      "arabic": "الطُّهُورُ شَطْرُ الْإِيمَانِ، وَالْحَمْدُ لِلَّهِ تَمْلَأُ الْمِيزَانَ، وَسُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ تَمْلَآنِ — أَوْ تَمْلَأُ — مَا بَيْنَ السَّمَاوَاتِ وَالْأَرْضِ",
+      "translationEn": "Purity is half of faith; Alhamdulillah fills the Scale; and SubhanAllah and Alhamdulillah fill what is between the heavens and the earth.",
+      "benefitAr": "عظمة «سبحان الله والحمد لله» في ميزان القيم.",
+      "collection": "صحيح مسلم",
+      "number": "٢٢٣",
+      "grade": "sahih",
+      "tags": ["tasbeeh", "gratitude"]
+    },
+    {
+      "id": "h_consistency",
+      "arabic": "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
+      "translationEn": "The deeds most beloved to Allah are the most consistent, even if small.",
+      "benefitAr": "فلسفة المُعين: قليل دائم خير من كثير منقطع.",
+      "collection": "متفق عليه",
+      "number": "البخاري ٦٤٦٤، مسلم ٧٨٣",
+      "grade": "sahih",
+      "tags": ["general", "streak"]
+    },
+    {
+      "id": "h_muslim_salima",
+      "arabic": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+      "translationEn": "A Muslim is the one from whose tongue and hand the Muslims are safe.",
+      "benefitAr": "حقيقة الإسلام العملية في سلامة الناس من أذاك.",
+      "collection": "متفق عليه",
+      "number": "البخاري ١٠، مسلم ٤٠",
+      "grade": "sahih",
+      "tags": ["general"]
+    },
+    {
+      "id": "h_taqwa",
+      "arabic": "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ",
+      "translationEn": "Fear Allah wherever you are, follow up a bad deed with a good one and it will erase it, and treat people with good character.",
+      "benefitAr": "وصية جامعة في سطر واحد ليومك كله.",
+      "collection": "جامع الترمذي",
+      "number": "١٩٨٧",
+      "grade": "hasan",
+      "tags": ["general", "istighfar"]
+    },
+    {
+      "id": "h_subhan_100",
+      "arabic": "مَنْ قَالَ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، فِي يَوْمٍ مِائَةَ مَرَّةٍ، حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ",
+      "translationEn": "Whoever says SubhanAllahi wa bihamdih one hundred times in a day, his sins will be wiped away even if they are like the foam of the sea.",
+      "benefitAr": "هدف يومي عملي في المسبحة — مائة مرة فقط.",
+      "collection": "متفق عليه",
+      "number": "البخاري ٦٤٠٥، مسلم ٢٦٩١",
+      "grade": "sahih",
+      "tags": ["tasbeeh", "istighfar"]
+    },
+    {
+      "id": "h_path_knowledge",
+      "arabic": "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا، سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+      "translationEn": "Whoever travels a path seeking knowledge — Allah makes easy for him thereby a path to Paradise.",
+      "benefitAr": "كل تعلّم نافع — حتى تعلمك الدين من هذا التطبيق — طريق إلى الجنة بإذن الله.",
+      "collection": "صحيح مسلم",
+      "number": "٢٦٩٩",
+      "grade": "sahih",
+      "tags": ["exam", "general"]
+    },
+    {
+      "id": "h_mufarridun",
+      "arabic": "سَبَقَ الْمُفَرِّدُونَ. قَالُوا: وَمَا الْمُفَرِّدُونَ يَا رَسُولَ اللَّهِ؟ قَالَ: الذَّاكِرُونَ اللَّهَ كَثِيرًا وَالذَّاكِرَاتُ",
+      "translationEn": "The mufarridun have surpassed all others. They asked: Who are the mufarridun, O Messenger of Allah? He said: The men and women who remember Allah abundantly.",
+      "benefitAr": "سباق الذاكرين — اجعل لسانك رطبًا.",
+      "collection": "صحيح مسلم",
+      "number": "٢٦٧٦",
+      "grade": "sahih",
+      "tags": ["general", "tasbeeh"]
+    }
+  ]
+}

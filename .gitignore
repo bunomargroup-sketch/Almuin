@@ -1,0 +1,46 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+coverage/
+*.iml
+.idea/
+.metadata
+
+# Generated localization / codegen
+lib/generated/
+**/generated_plugin_registrant.*
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+android/app/google-services.json
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/ephemeral/
+ios/Runner/GoogleService-Info.plist
+
+# Secrets & local env
+.env
+.env.*
+*.keystore
+*.jks
+
+# Large binary assets that are downloaded at setup time (optional premium add-ons)
+assets/sounds/*.mp3
+assets/fonts/*.ttf
+assets/fonts/*.otf
+
+# OS noise
+.DS_Store
+Thumbs.db

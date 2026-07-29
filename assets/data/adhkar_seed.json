@@ -1,0 +1,1087 @@
+{
+  "meta": {
+    "version": 1,
+    "language": "ar",
+    "policy": "All entries carry explicit references and an authenticity grade. Weak narrations are excluded from this seed; grades follow the takhrij of al-Albani where noted. See docs/DATA_SOURCES.md."
+  },
+  "items": [
+    {
+      "id": "morn_ayat_kursi",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ، لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "transliteration": "Allahu la ilaha illa Huwa, Al-Hayyul-Qayyum. La ta'khudhuhu sinatun wa la nawm. Lahu ma fis-samawati wa ma fil-ard...",
+      "translationEn": "Allah — there is no god but He, the Ever-Living, the Sustainer of all. Neither drowsiness nor sleep overtakes Him...",
+      "meaningAr": "أعظم آية في كتاب الله، تتضمن إثبات ألوهية الله وكمال حياته وقيوميته وعلمه وعظمته.",
+      "rewardAr": "من قالها حين يُصبح أُجير من الجن حتى يمسي",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "البقرة ٢:٢٥٥", "grade": "quran"},
+        {"collection": "صححه الألباني", "number": "السلسلة الصحيحة ٩٧٢", "grade": "sahih", "note": "فضل قولها حين الإصباح"}
+      ],
+      "tags": ["protection", "quran", "morning", "general"]
+    },
+    {
+      "id": "morn_ikhlas_muawwidhat",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ، وَقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ... (سورة الفلق كاملة)، وَقُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَهِ النَّاسِ... (سورة الناس كاملة)",
+      "transliteration": "Qul huwa Allahu ahad... · Qul a'udhu bi rabbil-falaq... · Qul a'udhu bi rabbin-nas...",
+      "translationEn": "Surah Al-Ikhlas, Surah Al-Falaq and Surah An-Nas, each three times in the morning and evening.",
+      "meaningAr": "سورة الإخلاص تعدل ثلث القرآن، والمعوذتان من أعظم ما يُتعوذ به.",
+      "rewardAr": "من قالها ثلاثًا حين يصبح وحين يمسي كفتْه من كل شيء",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨٢", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٥٧٥", "grade": "sahih", "note": "وقال: حسن صحيح"}
+      ],
+      "tags": ["protection", "morning", "quran"]
+    },
+    {
+      "id": "morn_sayyid_istighfar",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+      "transliteration": "Allahumma anta Rabbi, la ilaha illa anta, khalaqtani wa ana 'abduk, wa ana 'ala 'ahdika wa wa'dika mastata't...",
+      "translationEn": "O Allah, You are my Lord — there is no god but You. You created me and I am Your servant... so forgive me, for none forgives sins but You.",
+      "meaningAr": "سيد الاستغفار — يجمع التوحيد والاعتراف بالنعمة والذنب والرجاء بالمغفرة.",
+      "rewardAr": "من قالها من النهار موقنًا بها فمات من يومه دخل الجنة، ومن قالها من الليل موقنًا بها فمات قبل أن يصبح دخل الجنة",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٠٦", "grade": "sahih"}
+      ],
+      "tags": ["istighfar", "morning", "general", "sadness"]
+    },
+    {
+      "id": "morn_bismillah_la_yadurr",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+      "transliteration": "Bismillahil-ladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama', wa Huwas-Sami'ul-'Alim",
+      "translationEn": "In the name of Allah, with whose name nothing on earth or in heaven can cause harm — and He is the All-Hearing, the All-Knowing.",
+      "meaningAr": "توكل واستعاذة باسم الله العظيم من كل ضر.",
+      "rewardAr": "من قالها ثلاثًا حين يصبح وثلاثًا حين يمسي لم يضره شيء",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨٨", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٣٨٨", "grade": "sahih"}
+      ],
+      "tags": ["protection", "fear", "morning"]
+    },
+    {
+      "id": "morn_raditu",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا",
+      "transliteration": "Raditu billahi Rabba, wa bil-Islami dina, wa bi Muhammadin (sallallahu 'alayhi wa sallam) nabiyya",
+      "translationEn": "I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet.",
+      "meaningAr": "إعلان الرضا بالله وبرسالته ودينه — مناط القبول.",
+      "rewardAr": "كان حقًا على الله أن يرضيه يوم القيامة",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٧٢", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٣٨٩", "grade": "hasan"}
+      ],
+      "tags": ["general", "morning"]
+    },
+    {
+      "id": "morn_hasbiyallah",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+      "transliteration": "HasbiyAllahu la ilaha illa Huwa, 'alayhi tawakkalt, wa Huwa Rabbul-'Arshil-'Azim",
+      "translationEn": "Allah is sufficient for me; there is no god but He. In Him I place my trust, and He is the Lord of the magnificent Throne.",
+      "meaningAr": "دواء الهم: كفاية الله لمن توكل عليه.",
+      "rewardAr": "من قالها سبعًا حين يصبح وحين يمسي كفاه الله ما أهمّه من أمر الدنيا والآخرة",
+      "repeat": 7,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨١", "grade": "hasan", "note": "صححه الألباني بمجموع طرقه"}
+      ],
+      "tags": ["anxiety", "worry", "relief", "stress", "morning"]
+    },
+    {
+      "id": "morn_allahumma_bika",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",
+      "transliteration": "Allahumma bika asbahna, wa bika amsayna, wa bika nahya, wa bika namut, wa ilaykan-nushur",
+      "translationEn": "O Allah, by You we enter the morning and by You we enter the evening; by You we live and by You we die, and to You is the resurrection.",
+      "meaningAr": "افتقار اليوم كله إلى الله: حياة وموتًا وبعثًا.",
+      "repeat": 1,
+      "references": [
+        {"collection": "جامع الترمذي", "number": "٣٣٩١", "grade": "sahih"}
+      ],
+      "tags": ["morning", "general"]
+    },
+    {
+      "id": "morn_asbahna",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",
+      "transliteration": "Asbahna wa asbahal-mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la sharika lah...",
+      "translationEn": "We have entered the morning and the whole kingdom belongs to Allah. Praise is to Allah... My Lord, I ask You for the good of this day and what follows it, and I seek refuge in You from its evil...",
+      "meaningAr": "من أذكار الصباح الجامعة في صحيح مسلم.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢٧٢٣", "grade": "sahih"}
+      ],
+      "tags": ["morning", "protection"]
+    },
+    {
+      "id": "morn_ushhiduka",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+      "transliteration": "Allahumma inni asbahtu ush-hiduk, wa ush-hidu hamalata 'arshik, wa mala'ikataka wa jami'a khalqik...",
+      "translationEn": "O Allah, this morning I call You, the bearers of Your Throne, Your angels and all Your creation to witness that You are Allah, there is no god but You alone, and that Muhammad is Your servant and Messenger.",
+      "meaningAr": "تجديد التوحيد باستشهاد الله وملائكته وخلقه عليه.",
+      "rewardAr": "من قالها أربعًا أعتقه الله من النار",
+      "repeat": 4,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٦٩", "grade": "sahih"},
+        {"collection": "الأدب المفرد للبخاري", "number": "١٢٠١", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["morning", "general"]
+    },
+    {
+      "id": "morn_niima",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+      "transliteration": "Allahumma ma asbaha bi min ni'matin aw bi-ahadin min khalqik, fa minka wahdaka la sharika lak, fa lakal-hamdu wa lakash-shukr",
+      "translationEn": "O Allah, whatever blessing I or any of Your creatures have this morning comes from You alone, without partner — to You is all praise and thanks.",
+      "meaningAr": "شكر عملي على نعم الله الظاهرة والباطنة.",
+      "rewardAr": "من قالها حين يصبح فقد أدّى شكر يومه",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٧٣", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["gratitude", "morning"]
+    },
+    {
+      "id": "morn_ya_hayyu",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
+      "transliteration": "Ya Hayyu ya Qayyum, bi-rahmatika astaghith; aslih li sha'ni kullahu, wa la takilni ila nafsi tarfata 'ayn",
+      "translationEn": "O Ever-Living, O Sustainer, by Your mercy I seek help — set right all my affairs and do not leave me to myself even for the blink of an eye.",
+      "meaningAr": "دعاء الكرب الجامع؛ كان النبي ﷺ يدعو به عند الكرب.",
+      "repeat": 1,
+      "references": [
+        {"collection": "الحاكم في المستدرك", "number": "١/٥٤٥", "grade": "sahih", "note": "وصححه الألباني — صحيح الترغيب"},
+        {"collection": "النسائي في السنن الكبرى", "number": "", "grade": "sahih", "note": "باب الدعاء عند الكرب"}
+      ],
+      "tags": ["anxiety", "worry", "distress", "relief", "stress", "exam"]
+    },
+    {
+      "id": "morn_subhan_adad",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ",
+      "transliteration": "SubhanAllahi wa bihamdihi, 'adada khalqihi, wa rida nafsihi, wa zinata 'arshihi, wa midada kalimatih",
+      "translationEn": "Glory and praise be to Allah — as many as His creation, as pleases Him, as weighs His Throne, as inks His words.",
+      "meaningAr": "لفظ جويرية العظيم الذي فاق ما سبقته به الصبح كلها.",
+      "repeat": 3,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢٧٢٦", "grade": "sahih"}
+      ],
+      "tags": ["morning", "tasbeeh"]
+    },
+    {
+      "id": "morn_afiyah",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي، وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
+      "transliteration": "Allahumma inni as'alukal-'afwa wal-'afiyata fid-dunya wal-akhirah...",
+      "translationEn": "O Allah, I ask You for pardon and well-being in this world and the Hereafter... protect me from before me, behind me, my right, my left, and above...",
+      "meaningAr": "دعاء جامع للدنيا والآخرة — كان ابن عمر لا يدعه صباحًا ولا مساءً.",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٧٤", "grade": "sahih"},
+        {"collection": "سنن ابن ماجه", "number": "٣٨٧١", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["protection", "fear", "illness", "morning", "general"]
+    },
+    {
+      "id": "morn_aafini",
+      "category": "morning",
+      "time": "morning",
+      "arabic": "اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَهَ إِلَّا أَنْتَ",
+      "transliteration": "Allahumma 'afini fi badani, Allahumma 'afini fi sam'i, Allahumma 'afini fi basari, la ilaha illa ant...",
+      "translationEn": "O Allah, grant me well-being in my body, in my hearing, in my sight — there is no god but You. O Allah, I seek refuge in You from disbelief and poverty, and from the punishment of the grave.",
+      "meaningAr": "قاله عبد الرحمن بن أبي بكر لأبيه؛ فقال أبو بكر: هكذا سمعت رسول الله ﷺ يدعو.",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٩٠", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["illness", "morning", "protection"]
+    },
+    {
+      "id": "even_ayat_kursi",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ، لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "transliteration": "Allahu la ilaha illa Huwa, Al-Hayyul-Qayyum...",
+      "translationEn": "Ayat al-Kursi — Allah, there is no god but He, the Ever-Living, the Sustainer of all...",
+      "meaningAr": "أعظم آية في كتاب الله — حرز للمساء كما هي حرز للصباح.",
+      "rewardAr": "من قالها حين يُمسي أُجير من الجن حتى يصبح",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "البقرة ٢:٢٥٥", "grade": "quran"},
+        {"collection": "صححه الألباني", "number": "السلسلة الصحيحة ٩٧٢", "grade": "sahih", "note": "فضل قولها حين الإمساء"}
+      ],
+      "tags": ["protection", "quran", "evening"]
+    },
+    {
+      "id": "even_ikhlas_muawwidhat",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ... (سورة الإخلاص)، وَقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ... (سورة الفلق)، وَقُلْ أَعُوذُ بِرَبِّ النَّاسِ... (سورة الناس)",
+      "transliteration": "Qul huwa Allahu ahad... · Qul a'udhu bi rabbil-falaq... · Qul a'udhu bi rabbin-nas...",
+      "translationEn": "Surah Al-Ikhlas, Al-Falaq and An-Nas — three times each, evening and morning.",
+      "meaningAr": "كنّ ورقى لمن قرأهن ثلاثًا إذا أصبح وأمسى.",
+      "rewardAr": "كفته من كل شيء",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨٢", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٥٧٥", "grade": "sahih"}
+      ],
+      "tags": ["protection", "evening", "quran"]
+    },
+    {
+      "id": "even_amsayna",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",
+      "transliteration": "Amsayna wa amsal-mulku lillah, walhamdu lillah...",
+      "translationEn": "We have entered the evening and the whole kingdom belongs to Allah... My Lord, I ask You for the good of this night and what follows it...",
+      "meaningAr": "من أذكار المساء الجامعة في صحيح مسلم.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢٧٢٣", "grade": "sahih"}
+      ],
+      "tags": ["evening", "protection"]
+    },
+    {
+      "id": "even_allahumma_bika",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",
+      "transliteration": "Allahumma bika amsayna, wa bika asbahna, wa bika nahya, wa bika namut, wa ilaykal-masir",
+      "translationEn": "O Allah, by You we enter the evening and by You we enter the morning; by You we live and by You we die, and to You is the final return.",
+      "repeat": 1,
+      "references": [
+        {"collection": "جامع الترمذي", "number": "٣٣٩١", "grade": "sahih"}
+      ],
+      "tags": ["evening", "general"]
+    },
+    {
+      "id": "even_audhu_bikalimatillah",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+      "transliteration": "A'udhu bi kalimatillahit-tammati min sharri ma khalaq",
+      "translationEn": "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+      "meaningAr": "من تعوذات المساء العظيمة في حصن المسلم.",
+      "rewardAr": "من قالها ثلاثًا حين يمسي لم تضرّه حُمَةٌ (لدغة) تلك الليلة",
+      "repeat": 3,
+      "references": [
+        {"collection": "جامع الترمذي", "number": "كتاب الدعوات — باب ما يقول إذا أمسى", "grade": "hasan", "note": "حسنه الألباني في صحيح الترمذي؛ وأصل الذكر في صحيح مسلم ٢٧٠٩"}
+      ],
+      "tags": ["protection", "fear", "evening"]
+    },
+    {
+      "id": "even_sayyid_istighfar",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+      "transliteration": "Allahumma anta Rabbi, la ilaha illa anta...",
+      "translationEn": "Sayyid al-Istighfar — the master supplication for forgiveness.",
+      "rewardAr": "من قالها من الليل موقنًا بها فمات قبل أن يُصبح دخل الجنة",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٠٦", "grade": "sahih"}
+      ],
+      "tags": ["istighfar", "evening", "sadness"]
+    },
+    {
+      "id": "even_bismillah_la_yadurr",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+      "transliteration": "Bismillahil-ladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama', wa Huwas-Sami'ul-'Alim",
+      "translationEn": "In the name of Allah, with whose name nothing can cause harm...",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨٨", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٣٨٨", "grade": "sahih"}
+      ],
+      "tags": ["protection", "fear", "evening"]
+    },
+    {
+      "id": "even_hasbiyallah",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+      "transliteration": "HasbiyAllahu la ilaha illa Huwa, 'alayhi tawakkalt, wa Huwa Rabbul-'Arshil-'Azim",
+      "translationEn": "Allah is sufficient for me — upon Him I rely, and He is Lord of the magnificent Throne.",
+      "repeat": 7,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٨١", "grade": "hasan", "note": "صححه الألباني بمجموع طرقه"}
+      ],
+      "tags": ["anxiety", "worry", "relief", "evening"]
+    },
+    {
+      "id": "even_niima",
+      "category": "evening",
+      "time": "evening",
+      "arabic": "اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+      "transliteration": "Allahumma ma amsa bi min ni'matin aw bi-ahadin min khalqik...",
+      "translationEn": "O Allah, whatever blessing has come to me or any of Your creatures this evening is from You alone...",
+      "rewardAr": "من قالها حين يمسي فقد أدّى شكر ليلته",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٧٣", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["gratitude", "evening"]
+    },
+    {
+      "id": "after_istighfar_salam",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ (ثلاثًا)، اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+      "transliteration": "Astaghfirullah (×3). Allahumma antas-salam wa minkas-salam, tabarakta ya Dhal-jalali wal-ikram",
+      "translationEn": "I seek Allah's forgiveness (three times). O Allah, You are Peace and from You comes peace — blessed are You, O Owner of Majesty and Honor.",
+      "meaningAr": "هكذا كان النبي ﷺ يفتتح ذكره بعد التسليم من الصلاة.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٥٩١", "grade": "sahih"}
+      ],
+      "tags": ["afterPrayer", "istighfar"]
+    },
+    {
+      "id": "after_tasbih_33",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "سُبْحَانَ اللَّهِ (٣٣)، الْحَمْدُ لِلَّهِ (٣٣)، اللَّهُ أَكْبَرُ (٣٣)، ثم تَمَامُ الْمِائَةِ: لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+      "transliteration": "SubhanAllah (33), Alhamdulillah (33), Allahu Akbar (33), then: La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, wa Huwa 'ala kulli shay'in qadir",
+      "translationEn": "Glory be to Allah (33), praise be to Allah (33), Allah is the Greatest (33), then the completion of one hundred...",
+      "rewardAr": "غُفرت خطاياه وإن كانت مثل زبد البحر",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٥٩٧", "grade": "sahih"}
+      ],
+      "tags": ["afterPrayer", "tasbeeh"]
+    },
+    {
+      "id": "after_la_mania",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ، وَلَا مُعْطِيَ لِمَا مَنَعْتَ، وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ",
+      "transliteration": "La ilaha illallahu wahdahu la sharika lah... Allahumma la mani'a lima a'tayt, wa la mu'tiya lima mana't, wa la yanfa'u dhal-jaddi minkal-jadd",
+      "translationEn": "None has the right to be worshipped but Allah alone... O Allah, no one can withhold what You give, nor give what You withhold, and no wealth avails against You.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٨٤٤", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٥٩٣", "grade": "sahih"}
+      ],
+      "tags": ["afterPrayer", "rizq"]
+    },
+    {
+      "id": "after_ayat_kursi",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ... (آية الكرسي كاملة — البقرة ٢٥٥)",
+      "transliteration": "Ayat al-Kursi after every prescribed prayer",
+      "translationEn": "Ayat al-Kursi recited after each obligatory prayer.",
+      "rewardAr": "من قرأها دبر كل صلاة مكتوبة لم يمنعه من دخول الجنة إلا أن يموت",
+      "repeat": 1,
+      "references": [
+        {"collection": "النسائي في السنن الكبرى", "number": "٩٩٢٨", "grade": "sahih", "note": "صححه الألباني — صحيح الترغيب ٦٥٥"}
+      ],
+      "tags": ["afterPrayer", "protection", "quran"]
+    },
+    {
+      "id": "after_muawwidhat",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ (مرة)، وَقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ (مرة)، وَقُلْ أَعُوذُ بِرَبِّ النَّاسِ (مرة) — بعد كل صلاة",
+      "transliteration": "Al-Ikhlas, Al-Falaq, An-Nas — once each after every prayer",
+      "translationEn": "The three Qul surahs, once each, after every prayer (and three times after Fajr and Maghrib with the following dhikr).",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "١٥٢٣", "grade": "hasan", "note": "حسنه الألباني"},
+        {"collection": "سنن النسائي", "number": "١٣٣٧", "grade": "hasan"}
+      ],
+      "tags": ["afterPrayer", "protection"]
+    },
+    {
+      "id": "after_muadh",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ، وَشُكْرِكَ، وَحُسْنِ عِبَادَتِكَ",
+      "transliteration": "Allahumma a'inni 'ala dhikrik, wa shukrik, wa husni 'ibadatik",
+      "translationEn": "O Allah, help me to remember You, thank You, and worship You well.",
+      "meaningAr": "قالها النبي ﷺ لمعاذ: «يا معاذ والله إني لأحبك، فلا تدعن في دبر كل صلاة أن تقول...»",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "١٥٢٢", "grade": "sahih"},
+        {"collection": "سنن النسائي", "number": "١٣٠٣", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["afterPrayer", "gratitude", "exam", "focus"]
+    },
+    {
+      "id": "after_10x_fajr_maghrib",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ — عشرًا بعد صلاة المغرب وعشرًا بعد صلاة الصبح",
+      "transliteration": "La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamd, yuhyi wa yumit, wa Huwa 'ala kulli shay'in qadir (×10 after Maghrib and Fajr)",
+      "translationEn": "Ten times after Maghrib and ten after Fajr, before moving or speaking of worldly talk.",
+      "rewardAr": "كُتبت له عشر حسنات، ومُحيت عنه عشر سيئات، ورُفعت له عشر درجات، وكُنّ له حرزًا من الشيطان",
+      "repeat": 10,
+      "references": [
+        {"collection": "جامع الترمذي", "number": "٣٤٧٤", "grade": "hasan", "note": "وقال: حسن؛ وصححه بعض أهل العلم"}
+      ],
+      "tags": ["afterPrayer", "protection"]
+    },
+    {
+      "id": "after_ajirni_minan_nar",
+      "category": "afterPrayer",
+      "time": "afterPrayer",
+      "arabic": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+      "transliteration": "Allahumma ajirni minan-nar",
+      "translationEn": "O Allah, save me from the Fire — seven times after Fajr and Maghrib.",
+      "rewardAr": "من قالها سبعًا بعد الصبح ثم مات من يومه كتب الله له أجرًا؛ وكذلك بعد المغرب",
+      "repeat": 7,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٧٩", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["afterPrayer", "protection"]
+    },
+    {
+      "id": "sleep_bismika",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+      "transliteration": "Bismika Allahumma amutu wa ahya",
+      "translationEn": "In Your name, O Allah, I die and I live — said upon lying down to sleep.",
+      "meaningAr": "استحضار أن النوم موتة صغرى والاستيقاظ بعث.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٢٤", "grade": "sahih"}
+      ],
+      "tags": ["sleep", "insomnia"]
+    },
+    {
+      "id": "sleep_fatimah_tasbih",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "سُبْحَانَ اللَّهِ (٣٣)، الْحَمْدُ لِلَّهِ (٣٣)، اللَّهُ أَكْبَرُ (٣٤)",
+      "transliteration": "SubhanAllah (33), Alhamdulillah (33), Allahu Akbar (34)",
+      "translationEn": "The Tasbeeh of Fatimah (may Allah be pleased with her) before sleep.",
+      "rewardAr": "قال لها النبي ﷺ ولعلي: «هو خيرٌ لكما من خادم»",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٥٣٦١", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢٧٢٧", "grade": "sahih"}
+      ],
+      "tags": ["sleep", "insomnia", "tasbeeh"]
+    },
+    {
+      "id": "sleep_wadhatu_janbi",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا بِمَا تَحْفَظُ بِهِ عِبَادَكَ الصَّالِحِينَ",
+      "transliteration": "Bismika Rabbi wada'tu janbi wa bika arfa'uh; fa in amsakta nafsi farhamha, wa in arsaltaha fahfazha bima tahfazu bihi 'ibadakas-salihin",
+      "translationEn": "In Your name, my Lord, I lie down and by You I rise. If You take my soul, have mercy on it; if You release it, guard it as You guard Your righteous servants.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٢٠", "grade": "sahih"}
+      ],
+      "tags": ["sleep", "insomnia"]
+    },
+    {
+      "id": "sleep_ayat_kursi",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ... (آية الكرسي كاملة عند النوم)",
+      "transliteration": "Ayat al-Kursi before sleeping",
+      "translationEn": "Recite Ayat al-Kursi when you go to your bed.",
+      "rewardAr": "لا يزال عليك من الله حافظ، ولا يقربك شيطان حتى تصبح",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٢٣١١", "grade": "sahih", "note": "قصة أبي هريرة مع الشيطان"}
+      ],
+      "tags": ["sleep", "protection", "insomnia", "fear", "quran"]
+    },
+    {
+      "id": "sleep_khawatim_baqarah",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ... إِلَى قَوْلِهِ: لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا... (الآيتان الأخيرتان من سورة البقرة ٢٨٥-٢٨٦ كاملتين)",
+      "transliteration": "Amanar-rasulu bima unzila ilayhi min rabbihi wal-mu'minun... La yukallifullahu nafsan illa wus'aha...",
+      "translationEn": "The last two verses of Surah Al-Baqarah (2:285–286), recited before sleep.",
+      "rewardAr": "من قرأ بالآيتين من آخر سورة البقرة في ليلة كفتاه",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٥٠٠٩", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٨٠٨", "grade": "sahih"}
+      ],
+      "tags": ["sleep", "protection", "quran"]
+    },
+    {
+      "id": "sleep_aslamtu_nafsi",
+      "category": "sleep",
+      "time": "night",
+      "arabic": "اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِيَ إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ، رَغْبَةً وَرَهْبَةً إِلَيْكَ، لَا مَلْجَأَ وَلَا مَنْجَى مِنْكَ إِلَّا إِلَيْكَ، آمَنْتُ بِكِتَابِكَ الَّذِي أَنْزَلْتَ، وَبِنَبِيِّكَ الَّذِي أَرْسَلْتَ",
+      "transliteration": "Allahumma aslamtu nafsi ilayk, wa fawwadtu amri ilayk, wa wajjahtu wajhi ilayk, wa alja'tu zahri ilayk...",
+      "translationEn": "O Allah, I submit myself to You, entrust my affair to You, turn my face to You and lay my back against Your protection...",
+      "rewardAr": "قال النبي ﷺ للبراء: «فإنك إن بِتَّ ليلتك متَّ على الفطرة»",
+      "repeat": 1,
+      "references": [
+        {"collection": "متفق عليه", "number": "مسلم ٢٧١٠ — والبخاري في كتاب الدعوات", "grade": "sahih"}
+      ],
+      "tags": ["sleep", "insomnia", "anxiety"]
+    },
+    {
+      "id": "wake_ahyana",
+      "category": "wakeUp",
+      "time": "morning",
+      "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+      "transliteration": "Alhamdu lillahil-ladhi ahyana ba'da ma amatana, wa ilayhin-nushur",
+      "translationEn": "Praise be to Allah who gave us life after causing us to die, and to Him is the resurrection.",
+      "meaningAr": "أول ما يقوله المسلم عند الاستيقاظ من النوم كما علمه النبي ﷺ.",
+      "repeat": 1,
+      "references": [
+        {"collection": "متفق عليه", "number": "مسلم ٢٧١١ — والبخاري في كتاب الدعوات (الأذكار)", "grade": "sahih"}
+      ],
+      "tags": ["wakeUp"]
+    },
+    {
+      "id": "wake_ta_ar",
+      "category": "wakeUp",
+      "time": "night",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، وَالْحَمْدُ لِلَّهِ، وَسُبْحَانَ اللَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ، ثُم قَالَ: اللَّهُمَّ اغْفِرْ لِي",
+      "transliteration": "La ilaha illallahu wahdahu la sharika lah... walhamdu lillah, subhanAllah, la ilaha illallah, Allahu akbar, wa la hawla wa la quwwata illa billah — thumma: Allahummaghfir li",
+      "translationEn": "Said by whoever wakes in the night, then asks forgiveness — it will be answered; and if he makes wudu and prays, his prayer is accepted.",
+      "rewardAr": "من تعار من الليل فقالهن ثم قال: اللهم اغفر لي — أو دعا — استُجيب له",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "١١٥٤", "grade": "sahih"}
+      ],
+      "tags": ["wakeUp", "night", "insomnia"]
+    },
+    {
+      "id": "wake_afani_jasadi",
+      "category": "wakeUp",
+      "time": "morning",
+      "arabic": "الْحَمْدُ لِلَّهِ الَّذِي عَافَانِي فِي جَسَدِي، وَرَدَّ عَلَيَّ رُوحِي، وَأَذِنَ لِي بِذِكْرِهِ",
+      "transliteration": "Alhamdu lillahil-ladhi 'afani fi jasadi, wa radda 'alayya ruhi, wa adhina li bi-dhikrih",
+      "translationEn": "Praise be to Allah who granted well-being to my body, returned my soul to me, and permitted me to remember Him.",
+      "repeat": 1,
+      "references": [
+        {"collection": "جامع الترمذي", "number": "٣٤٠١", "grade": "hasan", "note": "وقال: حسن"}
+      ],
+      "tags": ["wakeUp", "gratitude"]
+    },
+    {
+      "id": "home_enter",
+      "category": "enterHome",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلَجِ وَخَيْرَ الْمَخْرَجِ، بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+      "transliteration": "Allahumma inni as'aluka khayral-mawlaji wa khayral-makhraj; bismillahi walajna, wa bismillahi kharajna, wa 'alallahi Rabbina tawakkalna",
+      "translationEn": "O Allah, I ask You for the best entrance and the best exit. In Allah's name we enter, in Allah's name we leave, and upon Allah our Lord we rely.",
+      "meaningAr": "وإذا دخل بيته ذكر الله لم يبِتْ معه شيطان — رواه مسلم في حديث جابر.",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٩٦", "grade": "sahih", "note": "صححه الألباني"},
+        {"collection": "صحيح مسلم", "number": "٢٠١٨", "grade": "sahih", "note": "فضل ذكر الله عند دخول المنزل"}
+      ],
+      "tags": ["protection", "general"]
+    },
+    {
+      "id": "home_leave",
+      "category": "leaveHome",
+      "time": "anytime",
+      "arabic": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+      "transliteration": "Bismillah, tawakkaltu 'alallah, wa la hawla wa la quwwata illa billah",
+      "translationEn": "In the name of Allah, I place my trust in Allah, and there is no might nor power except with Allah.",
+      "rewardAr": "يُقال لك حينها: هُدِيتَ وَكُفِيتَ وَوُقِيتَ، وتنحى عنه الشيطان",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٩٥", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٤٢٦", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["protection", "anxiety", "general"]
+    },
+    {
+      "id": "mosque_enter",
+      "category": "enterMosque",
+      "time": "anytime",
+      "arabic": "أَعُوذُ بِاللَّهِ الْعَظِيمِ، وَبِوَجْهِهِ الْكَرِيمِ، وَسُلْطَانِهِ الْقَدِيمِ، مِنَ الشَّيْطَانِ الرَّجِيمِ. اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",
+      "transliteration": "A'udhu billahil-'Azim, wa bi-wajhihil-karim, wa sultanihil-qadim, minash-shaytanir-rajim. Allahummaftah li abwaba rahmatik",
+      "translationEn": "I seek refuge in Allah the Magnificent, in His noble Face and eternal dominion, from the accursed devil. O Allah, open for me the doors of Your mercy.",
+      "meaningAr": "يقدّم رجله اليمنى ويقوله عند دخول المسجد.",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٤٦٦", "grade": "sahih", "note": "التعوذ عند الدخول"},
+        {"collection": "صحيح مسلم", "number": "٧١٣", "grade": "sahih", "note": "اللهم افتح لي أبواب رحمتك"}
+      ],
+      "tags": ["protection", "general"]
+    },
+    {
+      "id": "mosque_leave",
+      "category": "leaveMosque",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+      "transliteration": "Allahumma inni as'aluka min fadlik",
+      "translationEn": "O Allah, I ask You of Your bounty — said when leaving the mosque (left foot first).",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٧١٣", "grade": "sahih"}
+      ],
+      "tags": ["general", "rizq"]
+    },
+    {
+      "id": "travel_takbir_dua",
+      "category": "travel",
+      "time": "anytime",
+      "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ. اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ، اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الْأَهْلِ",
+      "transliteration": "Allahu akbar (×3). Subhanal-ladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun...",
+      "translationEn": "Allah is the Greatest (×3). Glory to Him who has subjected this to us... O Allah, we ask You in this journey for righteousness and piety... You are the Companion on the journey and the Guardian of the family.",
+      "meaningAr": "دعاء النبي ﷺ إذا استوى على بعيره خارجًا في سفر.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "١٣٤٢", "grade": "sahih"},
+        {"collection": "القرآن الكريم", "number": "الزخرف ٤٣:١٣-١٤", "grade": "quran", "note": "سبحان الذي سخر لنا هذا"}
+      ],
+      "tags": ["travel", "protection"]
+    },
+    {
+      "id": "travel_stop",
+      "category": "travel",
+      "time": "anytime",
+      "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+      "transliteration": "A'udhu bi kalimatillahit-tammati min sharri ma khalaq",
+      "translationEn": "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+      "rewardAr": "من نزل منزلًا فقالها لم يضرّه شيء حتى يرتحل من منزله ذلك",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢٧٠٨", "grade": "sahih"}
+      ],
+      "tags": ["travel", "protection", "fear"]
+    },
+    {
+      "id": "rain_sayyib",
+      "category": "rain",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ صَيِّبًا نَافِعًا",
+      "transliteration": "Allahumma sayyiban nafi'a",
+      "translationEn": "O Allah, make it a beneficial rain cloud.",
+      "meaningAr": "قالت عائشة رضي الله عنها: إن النبي ﷺ كان إذا رأى المطر قالها.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "١٠٣٢", "grade": "sahih"}
+      ],
+      "tags": ["rain"]
+    },
+    {
+      "id": "rain_mutirna",
+      "category": "rain",
+      "time": "anytime",
+      "arabic": "مُطِرْنَا بِفَضْلِ اللَّهِ وَرَحْمَتِهِ",
+      "transliteration": "Mutirna bi fadlillahi wa rahmatih",
+      "translationEn": "We have been given rain by the grace and mercy of Allah — the fitting response after rainfall.",
+      "meaningAr": "إسناد النعمة إلى الله لا إلى الأنواء؛ جاء بها النبي ﷺ معقبًا على المطر.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٨٤٦", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٧١", "grade": "sahih"}
+      ],
+      "tags": ["rain", "gratitude"]
+    },
+    {
+      "id": "rain_hawalayna",
+      "category": "rain",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ حَوَالَيْنَا وَلَا عَلَيْنَا، اللَّهُمَّ عَلَى الْآكَامِ وَالظِّرَابِ، وَبُطُونِ الْأَوْدِيَةِ، وَمَنَابِتِ الشَّجَرِ",
+      "transliteration": "Allahumma hawalayna wa la 'alayna; Allahumma 'alal-akami waz-zirab, wa butunil-awdiyah, wa manabitish-shajar",
+      "translationEn": "O Allah, around us and not upon us — upon the hills, the dunes, the valley beds and the places where trees grow.",
+      "meaningAr": "يُقال عند خوف الضرر من المطر والسيل.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "١٠١٣", "grade": "sahih"}
+      ],
+      "tags": ["rain", "protection", "fear"]
+    },
+    {
+      "id": "distress_la_ilaha_alazim",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
+      "transliteration": "La ilaha illallahul-'Azimul-Halim; la ilaha illallahu Rabbul-'Arshil-'Azim; la ilaha illallahu Rabbus-samawati wa Rabbul-ardi wa Rabbul-'Arshil-Karim",
+      "translationEn": "None has the right to be worshipped but Allah, the Magnificent, the Forbearing — Lord of the great Throne, Lord of the heavens and earth, Lord of the noble Throne.",
+      "meaningAr": "دعاء الكرب الأعظم؛ كان النبي ﷺ يدعو به عند الكرب.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٤٦", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢٧٣٠", "grade": "sahih"}
+      ],
+      "tags": ["anxiety", "worry", "distress", "sadness", "stress"]
+    },
+    {
+      "id": "distress_yunus",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+      "transliteration": "La ilaha illa anta, subhanaka, inni kuntu minaz-zalimin",
+      "translationEn": "There is no god but You; glory be to You. Indeed, I have been among the wrongdoers — the supplication of Yunus (Jonah), peace be upon him.",
+      "rewardAr": "لم يدعُ بها مسلم ربه في شيء قط إلا استجاب له",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "الأنبياء ٢١:٨٧", "grade": "quran"},
+        {"collection": "جامع الترمذي", "number": "٣٥٠٥", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["anxiety", "distress", "sadness", "istighfar", "relief"]
+    },
+    {
+      "id": "distress_hamm_huzn",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ",
+      "transliteration": "Allahumma inni a'udhu bika minal-hammi wal-hazan, wal-'ajzi wal-kasal, wal-bukhli wal-jubn, wa dala'id-dayni wa ghalabatir-rijal",
+      "translationEn": "O Allah, I seek refuge in You from worry and grief, incapacity and laziness, miserliness and cowardice, the burden of debt and the overpowering of men.",
+      "meaningAr": "كان النبي ﷺ يكثر من هذا الدعاء — قاله أبو سعيد الخدري لمن سأله عن الدعاء.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٦٩", "grade": "sahih"}
+      ],
+      "tags": ["worry", "sadness", "distress", "rizq", "anxiety"]
+    },
+    {
+      "id": "distress_hasbunallah",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+      "transliteration": "Hasbunallahu wa ni'mal-wakil",
+      "translationEn": "Allah is sufficient for us, and He is the best Disposer of affairs.",
+      "meaningAr": "قالها إبراهيم عليه السلام حين أُلقي في النار، وقالها محمد ﷺ حين قالوا له: إن الناس قد جمعوا لكم.",
+      "rewardAr": "قال الله بعدها عن القوم: «فانقلبوا بنعمة من الله وفضل لم يمسسهم سوء»",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٤٥٦٣", "grade": "sahih"},
+        {"collection": "القرآن الكريم", "number": "آل عمران ٣:١٧٣", "grade": "quran"}
+      ],
+      "tags": ["anxiety", "fear", "worry", "exam", "rizq", "relief"]
+    },
+    {
+      "id": "distress_rahmatika_arju",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ",
+      "transliteration": "Allahumma rahmataka arju, fala takilni ila nafsi tarfata 'ayn, wa aslih li sha'ni kullahu, la ilaha illa ant",
+      "translationEn": "O Allah, it is Your mercy I hope for — do not leave me to myself even for a blink of an eye, and set all my affairs right. There is no god but You.",
+      "meaningAr": "علمه النبي ﷺ بعض أصحابه لما سألوه بمَ يدعون.",
+      "repeat": 1,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "٥٠٩٠", "grade": "sahih", "note": "صححه الألباني"}
+      ],
+      "tags": ["anxiety", "stress", "worry", "relief"]
+    },
+    {
+      "id": "distress_ibn_sunni",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ إِنِّي عَبْدُكَ، وَابْنُ عَبْدِكَ، وَابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ، أَسْأَلُكَ بِكُلِّ اسْمٍ هُوَ لَكَ، سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَدًا مِنْ خَلْقِكَ، أَوِ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الْغَيْبِ عِنْدَكَ، أَنْ تَجْعَلَ الْقُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي، وَجَلَاءَ حُزْنِي، وَذَهَابَ هَمِّي",
+      "transliteration": "Allahumma inni 'abduk, wabnu 'abdik, wabnu amatik, nasiyati biyadik, madin fiyya hukmuk, 'adlun fiyya qada'uk...",
+      "translationEn": "O Allah, I am Your servant, son of Your servant and Your maidservant... I ask You to make the Quran the spring of my heart, the light of my chest, the banisher of my grief and the reliever of my worry.",
+      "rewardAr": "قال النبي ﷺ: «ما أصاب أحدًا قط همٌّ ولا حَزَنٌ فقال ذلك إلا أذهب الله همّه وحُزْنَه»",
+      "repeat": 1,
+      "references": [
+        {"collection": "مسند أحمد", "number": "١/٣٩١", "grade": "sahih", "note": "صححه الألباني — السلسلة الصحيحة ١٩٩"}
+      ],
+      "tags": ["sadness", "worry", "distress", "anxiety", "quran"]
+    },
+    {
+      "id": "distress_healing",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَأْسَ، اشْفِ وَأَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا",
+      "transliteration": "Allahumma Rabban-nas, adhhibil-ba's, ishfi wa Antash-Shafi; la shifa'a illa shifa'uk, shifa'an la yughadiru saqama",
+      "translationEn": "O Allah, Lord of mankind, remove the harm and heal — You are the Healer; there is no healing but Yours, a healing that leaves no sickness behind.",
+      "meaningAr": "يُقال للمريض وعند عيادته — من هدي النبي ﷺ في الرقية.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٥٦٧٥", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢١٩١", "grade": "sahih"}
+      ],
+      "tags": ["illness", "healing"]
+    },
+    {
+      "id": "distress_anger",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      "transliteration": "A'udhu billahi minash-shaytanir-rajim",
+      "translationEn": "I seek refuge in Allah from the accursed devil — the prescribed words for anger.",
+      "meaningAr": "لما ثار الرجلان عند النبي ﷺ قال: «إني لأعلم كلمة لو قالها لذهب عنه ما يجد؛ لو قال: أعوذ بالله من الشيطان الرجيم».",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦١١٥", "grade": "sahih"}
+      ],
+      "tags": ["anger", "protection"]
+    },
+    {
+      "id": "distress_ease",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+      "transliteration": "Allahumma la sahla illa ma ja'altahu sahla, wa anta taj'alul-hazna idha shi'ta sahla",
+      "translationEn": "O Allah, there is no ease except what You make easy — and You can make the difficult, if You will, easy.",
+      "meaningAr": "من أشهر ما يدعى به عند الامتحانات والأمور الشاقة.",
+      "repeat": 1,
+      "references": [
+        {"collection": "ابن السني في عمل اليوم والليلة", "number": "", "grade": "hasan", "note": "قال الألباني في السلسلة الصحيحة ٢٨٨٦: إسناده حسن لغيره"}
+      ],
+      "tags": ["exam", "ease", "stress", "focus"]
+    },
+    {
+      "id": "distress_istighfar_faraj",
+      "category": "distress",
+      "time": "anytime",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ",
+      "transliteration": "Astaghfirullah",
+      "translationEn": "I seek Allah's forgiveness — the key to relief.",
+      "rewardAr": "من لزم الاستغفار جعل الله له من كل همٍّ فرجًا، ومن كل ضيقٍ مخرجًا، ورزقه من حيث لا يحتسب",
+      "repeat": 100,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "١٥١٨", "grade": "hasan", "note": "حسنه الألباني في صحيح الجامع؛ وبعض أهل العلم حسنه لغيره"},
+        {"collection": "سنن ابن ماجه", "number": "٣٨١٩", "grade": "hasan"}
+      ],
+      "tags": ["istighfar", "rizq", "relief", "worry"]
+    },
+    {
+      "id": "gratitude_care",
+      "category": "gratitude",
+      "time": "anytime",
+      "arabic": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَى وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ",
+      "transliteration": "Rabbi awzi'ni an ashkura ni'matakal-lati an'amta 'alayya wa 'ala walidayya...",
+      "translationEn": "My Lord, inspire and support me to thank You for the blessing You have bestowed on me and my parents, and to do righteous deeds that please You...",
+      "meaningAr": "دعاء الشكر القرآني الجامع — من دعاء سليمان عليه السلام.",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "النمل ٢٧:١٩ — والأحقاف ٤٦:١٥", "grade": "quran"}
+      ],
+      "tags": ["gratitude", "quran"]
+    },
+    {
+      "id": "gratitude_hamd",
+      "category": "gratitude",
+      "time": "anytime",
+      "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+      "transliteration": "Alhamdu lillahi Rabbil-'alamin",
+      "translationEn": "All praise is due to Allah, Lord of the worlds — the believer's response to every blessing.",
+      "meaningAr": "آخر دعوى أهل الجنة؛ ومن قالها مرة امتلأت موازينه من فضل الله.",
+      "repeat": 10,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "الفاتحة ١:٢ — يونس ١٠:١٠", "grade": "quran"},
+        {"collection": "جامع الترمذي", "number": "٣٥٤٨", "grade": "sahih", "note": "«من قال الحمد لله مُلئتْ موازينه» وصححه الألباني"}
+      ],
+      "tags": ["gratitude", "general"]
+    },
+    {
+      "id": "istighfar_prophet_habit",
+      "category": "istighfar",
+      "time": "anytime",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
+      "transliteration": "Astaghfirullaha wa atubu ilayh",
+      "translationEn": "I seek Allah's forgiveness and turn to Him in repentance.",
+      "meaningAr": "قال النبي ﷺ مع كماله: «والله إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة» — رواه البخاري؛ وفي مسلم: في اليوم مائة مرة.",
+      "repeat": 100,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٣٠٧", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢٧٠٢", "grade": "sahih", "note": "مائة مرة في اليوم"}
+      ],
+      "tags": ["istighfar", "general"]
+    },
+    {
+      "id": "istighfar_council",
+      "category": "istighfar",
+      "time": "anytime",
+      "arabic": "رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ، إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ",
+      "transliteration": "Rabbighfir li wa tub 'alayya, innaka antat-Tawwabur-Rahim",
+      "translationEn": "My Lord, forgive me and accept my repentance — You are the Accepting of repentance, the Merciful.",
+      "meaningAr": "كان النبي ﷺ يقولها في مجلسه نحو مائة مرة قبل أن يقوم.",
+      "repeat": 10,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "١٥١٦", "grade": "hasan", "note": "حسنه الألباني"},
+        {"collection": "جامع الترمذي", "number": "٣٤٣٤", "grade": "hasan"}
+      ],
+      "tags": ["istighfar"]
+    },
+    {
+      "id": "istighfar_hayy_qayyum",
+      "category": "istighfar",
+      "time": "anytime",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",
+      "transliteration": "Astaghfirullahal-'Azim, alladhi la ilaha illa Huwal-Hayyul-Qayyum, wa atubu ilayh",
+      "translationEn": "I seek the forgiveness of Allah the Magnificent — none has the right to be worshipped but He, the Ever-Living, the Sustainer — and I turn to Him in repentance.",
+      "rewardAr": "من قالها غُفر له وإن كان قد فرّ من الزحف",
+      "repeat": 3,
+      "references": [
+        {"collection": "سنن أبي داود", "number": "١٥١٧", "grade": "hasan", "note": "حسنه الألباني"},
+        {"collection": "جامع الترمذي", "number": "٣٥٧٧", "grade": "hasan"}
+      ],
+      "tags": ["istighfar", "relief"]
+    },
+    {
+      "id": "tasbeeh_kalimatan",
+      "category": "tasbeeh",
+      "time": "anytime",
+      "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+      "transliteration": "SubhanAllahi wa bihamdih, SubhanAllahil-'Azim",
+      "translationEn": "Glory and praise be to Allah; glory be to Allah the Magnificent.",
+      "rewardAr": "كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن",
+      "repeat": 100,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٦٨٢", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢٦٩٤", "grade": "sahih"}
+      ],
+      "tags": ["tasbeeh", "general"]
+    },
+    {
+      "id": "tasbeeh_100",
+      "category": "tasbeeh",
+      "time": "anytime",
+      "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+      "transliteration": "SubhanAllahi wa bihamdih",
+      "translationEn": "Glory and praise be to Allah — one hundred times a day.",
+      "rewardAr": "من قالها في يوم مائة مرة حُطَّتْ خطاياه وإن كانت مثل زبد البحر",
+      "repeat": 100,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٦٤٠٥", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٢٦٩١", "grade": "sahih"}
+      ],
+      "tags": ["tasbeeh", "istighfar", "relief"]
+    },
+    {
+      "id": "tasbeeh_best_words",
+      "category": "tasbeeh",
+      "time": "anytime",
+      "arabic": "سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ",
+      "transliteration": "SubhanAllah, walhamdu lillah, wa la ilaha illallah, wallahu akbar",
+      "translationEn": "Glory be to Allah, praise be to Allah, none has the right to be worshipped but Allah, and Allah is the Greatest.",
+      "rewardAr": "أحبّ الكلام إلى الله أربع... وفي رواية مسلم: هن الباقيات الصالحات",
+      "repeat": 10,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢١٣٧", "grade": "sahih"},
+        {"collection": "جامع الترمذي", "number": "٣٥١٩", "grade": "sahih", "note": "الباقيات الصالحات — وصححه الألباني بمجموع طرقه"}
+      ],
+      "tags": ["tasbeeh", "gratitude", "general"]
+    },
+    {
+      "id": "tasbeeh_juwayriyya",
+      "category": "tasbeeh",
+      "time": "morning",
+      "arabic": "سُبْحَانَ اللَّهِ عَدَدَ خَلْقِهِ، سُبْحَانَ اللَّهِ رِضَا نَفْسِهِ، سُبْحَانَ اللَّهِ زِنَةَ عَرْشِهِ، سُبْحَانَ اللَّهِ مِدَادَ كَلِمَاتِهِ",
+      "transliteration": "SubhanAllahi 'adada khalqih; SubhanAllahi rida nafsih; SubhanAllahi zinata 'arshih; SubhanAllahi midada kalimatih",
+      "translationEn": "Glory be to Allah, as many as His creation; as contents Him; as weighs His Throne; as inks His words.",
+      "meaningAr": "قالها النبي ﷺ لجويرية رضي الله عنها بعد أن ذكر حالها في المصلى من الفجر إلى الضحى.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح مسلم", "number": "٢٧٢٦", "grade": "sahih"}
+      ],
+      "tags": ["tasbeeh", "morning"]
+    },
+    {
+      "id": "tasbeeh_la_hawla",
+      "category": "tasbeeh",
+      "time": "anytime",
+      "arabic": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+      "transliteration": "La hawla wa la quwwata illa billah",
+      "translationEn": "There is no might nor power except with Allah.",
+      "rewardAr": "كنز من كنوز الجنة — «ألا أدلك على كلمة هي كنز من كنوز الجنة؟»",
+      "repeat": 10,
+      "references": [
+        {"collection": "متفق عليه", "number": "مسلم ٢٧٠٤ — والبخاري في الرقاق", "grade": "sahih"}
+      ],
+      "tags": ["tasbeeh", "anxiety", "stress", "relief"]
+    },
+    {
+      "id": "salawat_ibrahimiyyah",
+      "category": "salawat",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "transliteration": "Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallayta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid...",
+      "translationEn": "O Allah, send prayers upon Muhammad and the family of Muhammad, as You sent prayers upon Ibrahim and the family of Ibrahim... and send blessings likewise.",
+      "meaningAr": "أكمل صيغ الصلاة على النبي ﷺ — الصيغة الإبراهيمية التي علّمها النبي ﷺ لأصحابه.",
+      "repeat": 1,
+      "references": [
+        {"collection": "صحيح البخاري", "number": "٣٣٧٠", "grade": "sahih"},
+        {"collection": "صحيح مسلم", "number": "٤٠٦", "grade": "sahih"}
+      ],
+      "tags": ["salawat", "friday", "general"]
+    },
+    {
+      "id": "salawat_short",
+      "category": "salawat",
+      "time": "anytime",
+      "arabic": "اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ",
+      "transliteration": "Allahumma salli wa sallim 'ala nabiyyina Muhammad",
+      "translationEn": "O Allah, send prayers and peace upon our Prophet Muhammad.",
+      "rewardAr": "من صلى عليه ﷺ صلاة واحدة صلى الله عليه بها عشرًا — ويوم الجمعة يُستحب الإكثار منها",
+      "repeat": 100,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "الأحزاب ٣٣:٥٦", "grade": "quran", "note": "إن الله وملائكته يصلون على النبي"},
+        {"collection": "صحيح مسلم", "number": "٤٠٨", "grade": "sahih", "note": "من صلى علي صلاة صلى الله عليه بها عشرا"},
+        {"collection": "سنن أبي داود", "number": "١٠٤٧", "grade": "sahih", "note": "أكثروا علي من الصلاة يوم الجمعة — صححه الألباني"}
+      ],
+      "tags": ["salawat", "friday"]
+    },
+    {
+      "id": "quran_mulk_sleep",
+      "category": "quran",
+      "time": "night",
+      "arabic": "سُورَةُ الْمُلْكِ — «تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ» (٣٠ آية — تُقرأ كل ليلة قبل النوم)",
+      "transliteration": "Surah Al-Mulk (67), read every night before sleep",
+      "translationEn": "Surah Al-Mulk — the thirty-verse intercessor, read nightly before sleep.",
+      "rewardAr": "هي المانعة من عذاب القبر؛ «كان النبي ﷺ لا ينام حتى يقرأ بـ﴿الم تنزيل﴾ و﴿تبارك الذي بيده الملك﴾»",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "الملك ٦٧", "grade": "quran"},
+        {"collection": "جامع الترمذي", "number": "٢٨٩١", "grade": "hasan", "note": "«سورة الملك هي المانعة من عذاب القبر» — حسنه الألباني في صحيح الترغيب ١٤٧٥"}
+      ],
+      "tags": ["quran", "sleep", "protection", "night"]
+    },
+    {
+      "id": "quran_kahf_friday",
+      "category": "quran",
+      "time": "anytime",
+      "arabic": "سُورَةُ الْكَهْفِ — يُستحب قراءتها يوم الجمعة",
+      "transliteration": "Surah Al-Kahf (18), recited on Friday",
+      "translationEn": "Surah Al-Kahf, recited on the day of Jumu'ah.",
+      "rewardAr": "من قرأ سورة الكهف يوم الجمعة أضاء له من النور ما بين الجمعتين",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "الكهف ١٨", "grade": "quran"},
+        {"collection": "الحاكم في المستدرك", "number": "٢/٣٩٩", "grade": "sahih", "note": "صححه الألباني — صحيح الترغيب ٧٣٦"}
+      ],
+      "tags": ["quran", "friday"]
+    },
+    {
+      "id": "quran_wird_daily",
+      "category": "quran",
+      "time": "anytime",
+      "arabic": "وِرْدُ الْقُرْآنِ الْيَوْمِيُّ — «وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا»",
+      "transliteration": "Your daily portion (wird) of Quran recitation",
+      "translationEn": "A daily portion of the Quran — even one page — recited with reflection.",
+      "rewardAr": "قال ﷺ: «اقرءوا القرآن فإنه يأتي يوم القيامة شفيعًا لأصحابه» — رواه مسلم",
+      "repeat": 1,
+      "references": [
+        {"collection": "القرآن الكريم", "number": "المزمل ٧٣:٤", "grade": "quran"},
+        {"collection": "صحيح مسلم", "number": "٨٠٤", "grade": "sahih", "note": "اقرءوا القرآن فإنه يأتي شفيعا لأصحابه يوم القيامة"}
+      ],
+      "tags": ["quran", "general", "ramadan"]
+    }
+  ]
+}
