@@ -1,0 +1,84 @@
+name: Debug APK
+
+# Builds an installable debug APK and publishes it to a fixed release tag, so
+# the download URL never changes and can be opened directly on a phone.
+# Debug builds are signed with the standard debug keystore, which means they
+# install without any Play Store or developer account involvement.
+
+on:
+  push:
+    branches: ["main", "arena/**", "fix/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-apk:
+    name: Build & publish debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build
+        shell: bash
+        run: |
+          run_step () {
+            local title="$1"; shift
+            set +e
+            "$@" > /tmp/step.log 2>&1
+            local code=$?
+            set -e
+            cat /tmp/step.log
+            if [ "$code" -ne 0 ]; then
+              local msg
+              msg=$(tail -c 3000 /tmp/step.log \
+                    | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+                    | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g')
+              echo "::error title=FAILED: ${title}::${msg}"
+            fi
+            return $code
+          }
+          run_step "flutter pub get"  flutter pub get
+          run_step "flutter gen-l10n" flutter gen-l10n
+          run_step "flutter build apk --debug" flutter build apk --debug
+
+      - name: Publish to the android-debug release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          APK=build/app/outputs/flutter-apk/app-debug.apk
+          ls -lh "$APK"
+          NOTES="Debug build of \`${GITHUB_REF_NAME}\` at \`${GITHUB_SHA:0:7}\`.
+
+          Install on Android: open this page on the phone, tap the .apk asset
+          below, and allow installation from unknown sources when prompted.
+          Debug-signed — no Play Store or developer account needed."
+
+          if gh release view android-debug >/dev/null 2>&1; then
+            gh release edit android-debug --notes "$NOTES"
+            gh release upload android-debug "$APK" --clobber
+          else
+            gh release create android-debug "$APK" \
+              --title "Almuin — debug APK (latest)" \
+              --notes "$NOTES" \
+              --prerelease
+          fi
+
+          echo "### APK published" >> "$GITHUB_STEP_SUMMARY"
+          echo "https://github.com/${GITHUB_REPOSITORY}/releases/download/android-debug/app-debug.apk" >> "$GITHUB_STEP_SUMMARY"
