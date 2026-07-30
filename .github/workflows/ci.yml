@@ -47,6 +47,16 @@ jobs:
               echo
             } >> "$GITHUB_STEP_SUMMARY"
             echo "::endgroup::"
+            # Also surface the tail as an error annotation: annotations render
+            # into the run page's static HTML, so the failure is readable
+            # without downloading logs or signing in.
+            if [ "$code" -ne 0 ]; then
+              local msg
+              msg=$(tail -c 3000 /tmp/step.log \
+                    | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+                    | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g')
+              echo "::error title=FAILED: ${title}::${msg}"
+            fi
             return $code
           }
 
