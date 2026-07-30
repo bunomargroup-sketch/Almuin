@@ -75,7 +75,7 @@ jobs:
           run_step "flutter analyze (style, non-gating)" \
             flutter analyze --no-fatal-infos --no-fatal-warnings || true
           run_step "dart analyze (errors only, gating)" \
-            dart analyze --fatal-infos=false --fatal-warnings=false || overall=1
+            dart analyze --no-fatal-infos --no-fatal-warnings || overall=1
           run_step "flutter test" flutter test --reporter expanded || overall=1
           exit $overall
 
