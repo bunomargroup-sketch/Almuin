@@ -56,8 +56,8 @@ class SituationClassifier {
       'travelling', 'trip', 'flight', 'journey', 'driving',
     ],
     SituationIntent.gratitude: [
-      'شكر', 'نعمة', 'ممتن', 'سعيد', 'فرح', 'فرحان', 'grateful', 'thankful',
-      'happy', 'blessing', 'alhamdulillah', 'joy',
+      'شكر', 'الحمد', 'امتنان', 'نعم', 'ممتن', 'سعيد', 'فرح', 'فرحان',
+      'grateful', 'thankful', 'happy', 'blessing', 'alhamdulillah', 'joy',
     ],
     SituationIntent.anger: [
       'غاضب', 'غضب', 'زعلان', 'عصبية', 'أعصاب', 'angry', 'anger', 'furious',
@@ -84,10 +84,18 @@ class SituationClassifier {
   /// "my mother is sick" → illness.
   static const _relational = ['أمي', 'أبي', 'أم', 'أب', 'اخي', 'أختي', 'mother', 'father', 'mom', 'dad', 'son', 'daughter'];
 
+  /// Keywords after the same normalization the input text goes through —
+  /// computed once. Without this, e.g. 'نعمة' (ة) could never match the
+  /// normalized 'نعمه' (ه) in the user's message.
+  static final Map<SituationIntent, List<String>> _normalizedKeywords = {
+    for (final e in _keywords.entries)
+      e.key: [for (final kw in e.value) _normalize(kw)],
+  };
+
   IntentMatch classify(String text) {
     final lower = _normalize(text);
     final scores = <SituationIntent, double>{};
-    for (final entry in _keywords.entries) {
+    for (final entry in _normalizedKeywords.entries) {
       var score = 0.0;
       for (final kw in entry.value) {
         if (lower.contains(kw)) {
@@ -100,14 +108,15 @@ class SituationClassifier {
       return const IntentMatch(SituationIntent.general, 0.3);
     }
     // Relational phrasing slightly boosts confidence (user told a real story).
-    final relationalBoost = _relational.any(lower.contains) ? 0.15 : 0.0;
+    final relationalBoost =
+        _relational.any((k) => lower.contains(_normalize(k))) ? 0.15 : 0.0;
     final best = scores.entries.reduce((a, b) => a.value >= b.value ? a : b);
     final confidence =
         (best.value / 2.5 + relationalBoost).clamp(0.0, 1.0).toDouble();
     return IntentMatch(best.key, confidence);
   }
 
-  String _normalize(String s) => s
+  static String _normalize(String s) => s
       .toLowerCase()
       .replaceAll(RegExp('[ً-ْٰ]'), '') // strip harakat
       .replaceAll(RegExp('[إأآٱ]'), 'ا')
