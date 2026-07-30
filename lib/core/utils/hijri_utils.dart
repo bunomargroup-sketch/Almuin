@@ -1,4 +1,4 @@
-import 'package:hijri/hijri.dart';
+import 'package:hijri/hijri_calendar.dart';
 
 /// Islamic-calendar awareness used by the smart scheduler and the recommender:
 /// Ramadan, Fridays, both Eids, Arafa, Ashura — anything that should change
