@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "arena/**", "fix/**", "ci/**"]
+  pull_request:
+    branches: ["main", "arena/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze-and-test:
+    name: Analyze & test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          # Not pinned: share_plus ^13.3.0 requires Dart >=3.10.0, so the
+          # project needs a much newer toolchain than pubspec.yaml's declared
+          # floors (sdk ^3.6.0 / flutter >=3.27.0) allow. Track stable until
+          # those floors are corrected, then pin again.
+          channel: stable
+          cache: true
+
+      # Every check runs even if an earlier one fails, and each one's output is
+      # mirrored into the run summary. The summary is plain HTML on the run
+      # page, so failures are diagnosable without downloading the raw logs.
+      - name: Run checks
+        shell: bash
+        run: |
+          run_step () {
+            local title="$1"; shift
+            echo "::group::$title"
+            set +e
+            "$@" > /tmp/step.log 2>&1
+            local code=$?
+            set -e
+            cat /tmp/step.log
+            {
+              echo "### ${title} — exit ${code}"
+              echo '```'
+              tail -c 20000 /tmp/step.log
+              echo '```'
+              echo
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::endgroup::"
+            # Also surface the tail as an error annotation: annotations render
+            # into the run page's static HTML, so the failure is readable
+            # without downloading logs or signing in.
+            if [ "$code" -ne 0 ]; then
+              local msg
+              msg=$(tail -c 3000 /tmp/step.log \
+                    | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+                    | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g')
+              echo "::error title=FAILED: ${title}::${msg}"
+            fi
+            return $code
+          }
+
+          overall=0
+          run_step "flutter --version" flutter --version || overall=1
+          run_step "flutter pub get" flutter pub get || overall=1
+          # lib/l10n/app_localizations*.dart is gitignored, so it must be
+          # generated before analysis or every context.l10n reference fails.
+          run_step "flutter gen-l10n" flutter gen-l10n || overall=1
+          # Style lints (190 require_trailing_commas violations at time of
+          # writing) are reported but do not gate: only real analyzer errors
+          # should block a PR. Tighten once the backlog is cleaned up.
+          run_step "flutter analyze (style, non-gating)" \
+            flutter analyze --no-fatal-infos --no-fatal-warnings || true
+          run_step "dart analyze (errors only, gating)" \
+            dart analyze --no-fatal-warnings || overall=1
+          run_step "flutter test" flutter test --reporter expanded || overall=1
+          exit $overall
+
+  android-build:
+    name: Android build (informational)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    # Expected to fail until android/app/build.gradle.kts exists with core
+    # library desugaring enabled (required by flutter_local_notifications).
+    # Non-blocking so the failure stays visible without gating the PR.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          # Not pinned: share_plus ^13.3.0 requires Dart >=3.10.0, so the
+          # project needs a much newer toolchain than pubspec.yaml's declared
+          # floors (sdk ^3.6.0 / flutter >=3.27.0) allow. Track stable until
+          # those floors are corrected, then pin again.
+          channel: stable
+          cache: true
+
+      - name: Build debug APK
+        shell: bash
+        run: |
+          set +e
+          flutter pub get   > /tmp/b.log 2>&1
+          flutter gen-l10n >> /tmp/b.log 2>&1
+          flutter build apk --debug >> /tmp/b.log 2>&1
+          code=$?
+          cat /tmp/b.log
+          {
+            echo "### android build — exit ${code}"
+            echo '```'
+            tail -c 20000 /tmp/b.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit $code
