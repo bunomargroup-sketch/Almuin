@@ -73,16 +73,27 @@ class TasbeehController extends Notifier<TasbeehState> {
 
   /// One bead.
   Future<void> increment() async {
+    if (state.reached) {
+      // Round already complete & persisted — extra beads start a FRESH
+      // session instead of re-persisting the finished one (review H3).
+      HapticFeedback.selectionClick();
+      state = TasbeehState(
+        dhikrText: state.dhikrText,
+        dhikrId: state.dhikrId,
+        target: state.target,
+        count: 1,
+        startedAt: DateTime.now(),
+      );
+      return;
+    }
     final next = state.count + 1;
+    HapticFeedback.selectionClick();
+    state = state.copyWith(count: next);
     if (next >= state.target) {
-      // Completion: strong haptic + persist finished session.
+      // Completion: strong haptic + persist finished session exactly once.
       HapticFeedback.mediumImpact();
-      state = state.copyWith(count: next);
       await _persist(completed: true);
       await _celebrate();
-    } else {
-      HapticFeedback.selectionClick();
-      state = state.copyWith(count: next);
     }
   }
 

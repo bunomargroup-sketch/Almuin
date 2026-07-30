@@ -9,6 +9,7 @@ import 'package:timezone/timezone.dart' as tz;
 import '../constants/app_constants.dart';
 import '../utils/logger.dart';
 import 'app_database.dart';
+import 'timezone_service.dart';
 
 /// Key used to hand a deep link from a background notification tap to the
 /// next foreground frame (see MainShell).
@@ -20,6 +21,8 @@ const kPendingDeepLinkKey = 'pending.deepLink';
 @pragma('vm:entry-point')
 Future<void> notificationBackgroundHandler(NotificationResponse r) async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Fresh isolate ⇒ fresh tz static state (snooze re-arming needs it).
+  await TimezoneService.ensureInitialized();
   final db = AppDatabase.instance;
   final notifId = r.id ?? 0;
 
@@ -104,15 +107,43 @@ class NotificationService {
       onDidReceiveBackgroundNotificationResponse: notificationBackgroundHandler,
     );
 
-    await _plugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.createNotificationChannel(const AndroidNotificationChannel(
-          AppConstants.channelRemindersId,
-          AppConstants.channelRemindersName,
-          description: AppConstants.channelRemindersDesc,
-          importance: Importance.high,
-        ));
+    // Android 8+ (API 26+): sound & vibration are CHANNEL properties, frozen
+    // at first creation — per-notification playSound/enableVibration flags
+    // are ignored on every supported device (review H6). So we register one
+    // channel per style combination and pick the matching id when posting.
+    final android =
+        _plugin.resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>();
+    const baseId = AppConstants.channelRemindersId;
+    final channels = <(String, String, bool, bool)>[
+      (baseId, AppConstants.channelRemindersName, true, true),
+      ('${baseId}_sound', '${AppConstants.channelRemindersName} · صوت فقط',
+          true, false),
+      ('${baseId}_vibrate',
+          '${AppConstants.channelRemindersName} · اهتزاز فقط', false, true),
+      ('${baseId}_silent', '${AppConstants.channelRemindersName} · صامت',
+          false, false),
+    ];
+    for (final (id, name, sound, vibrate) in channels) {
+      await android?.createNotificationChannel(AndroidNotificationChannel(
+        id,
+        name,
+        description: AppConstants.channelRemindersDesc,
+        importance: Importance.high,
+        playSound: sound,
+        enableVibration: vibrate,
+      ));
+    }
+  }
+
+  /// The channel matching the current user style, resolved per notification.
+  String get _channelId {
+    if (_soundEnabled && _vibrationEnabled) {
+      return AppConstants.channelRemindersId;
+    }
+    if (_soundEnabled) return '${AppConstants.channelRemindersId}_sound';
+    if (_vibrationEnabled) return '${AppConstants.channelRemindersId}_vibrate';
+    return '${AppConstants.channelRemindersId}_silent';
   }
 
   /// Ask for runtime permissions (call after onboarding, not at cold start).
@@ -132,6 +163,8 @@ class NotificationService {
   }
 
   void _onForegroundResponse(NotificationResponse r) async {
+    // Tapped ⇒ the notification did reach the shade (review M6 wiring).
+    await AppDatabase.instance.markDelivered(r.id ?? 0);
     // Update progress even when tapped from the foreground switcher.
     if (r.actionId == AppConstants.actionDone) {
       await AppDatabase.instance.completeByNotificationId(r.id ?? 0);
@@ -158,7 +191,7 @@ class NotificationService {
     String? reason,
   }) {
     final android = AndroidNotificationDetails(
-      AppConstants.channelRemindersId,
+      _channelId,
       AppConstants.channelRemindersName,
       channelDescription: AppConstants.channelRemindersDesc,
       importance: Importance.high,
@@ -205,15 +238,27 @@ class NotificationService {
     String? reason,
     int? eventRowId,
   }) async {
-    // Mark the planned delivery so the scheduler and stats stay in sync.
+    // Mark the planned delivery so the scheduler and stats stay in sync —
+    // and (for re-arms like snooze) point the row back at 'scheduled'.
     if (eventRowId != null) {
       final d = await AppDatabase.instance.db;
-      await d.update('reminder_events', {'notification_id': notificationId},
-          where: 'id = ?', whereArgs: [eventRowId]);
+      await d.update(
+        'reminder_events',
+        {
+          'notification_id': notificationId,
+          'status': 'scheduled',
+          'scheduled_at': when.toIso8601String(),
+          'snoozed_until': null,
+        },
+        where: 'id = ?',
+        whereArgs: [eventRowId],
+      );
     }
 
-    final scheduled = tz.TZDateTime.from(when, tz.local);
     try {
+      // TZ conversion inside the try: in a background isolate without the
+      // tz database initialized, this line itself can throw (review C3).
+      final scheduled = tz.TZDateTime.from(when, tz.local);
       await _plugin.zonedSchedule(
         notificationId,
         title,
@@ -227,22 +272,29 @@ class NotificationService {
       );
     } catch (e, st) {
       logWarn('Exact alarm denied — falling back to inexact', e, st);
-      await _plugin.zonedSchedule(
-        notificationId,
-        title,
-        arabicBody,
-        scheduled,
-        _details(bigText: arabicBody, reason: reason),
-        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-        uiLocalNotificationDateInterpretation:
-            UILocalNotificationDateInterpretation.absoluteTime,
-        payload: payload,
-      );
+      try {
+        final scheduled = tz.TZDateTime.from(when, tz.local);
+        await _plugin.zonedSchedule(
+          notificationId,
+          title,
+          arabicBody,
+          scheduled,
+          _details(bigText: arabicBody, reason: reason),
+          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+          uiLocalNotificationDateInterpretation:
+              UILocalNotificationDateInterpretation.absoluteTime,
+          payload: payload,
+        );
+      } catch (e2, st2) {
+        logWarn('Scheduling failed entirely', e2, st2);
+      }
     }
     return notificationId;
   }
 
   /// Re-fires a snoozed notification 10 minutes later, reusing its content.
+  /// The DB row is re-pointed at the NEW notification id (review M5) so a
+  /// later «تم» tap records the completion instead of finding nothing.
   Future<void> rescheduleSnoozed(NotificationResponse original) async {
     final event =
         await AppDatabase.instance.eventByNotificationId(original.id ?? 0);
@@ -257,8 +309,12 @@ class NotificationService {
       when: when,
       payload: original.payload ?? '/',
       reason: 'مؤجَّل',
+      eventRowId: (event?['id'] as num?)?.toInt(),
     );
   }
+
+  /// Cancel one armed notification by id (replan only touches pending ids).
+  Future<void> cancelReminder(int id) => _plugin.cancel(id);
 
   Future<void> cancelAllReminders() => _plugin.cancelAll();
 

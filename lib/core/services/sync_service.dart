@@ -78,15 +78,29 @@ class SyncService {
         'meaningAr': r['meaning_ar'],
         'rewardAr': r['reward_ar'],
         'repeat': r['repeat'],
-        'references':
-            jsonDecode((r['refs_json'] as String?) ?? '[]') as List<dynamic>,
-        'tags': jsonDecode((r['tags_json'] as String?) ?? '[]') as List<dynamic>,
+        'references': jsonListColumn(r['refs_json']),
+        'tags': jsonListColumn(r['tags_json']),
       };
 
   Future<bool> _isOnline() async {
     final results = await Connectivity().checkConnectivity();
     return results.any((r) => r != ConnectivityResult.none);
   }
+}
+
+/// Decodes a JSON column that may arrive *already decoded* (PostgREST jsonb
+/// comes back as a List, not a String — jsonDecode there throws, review C4).
+List<dynamic> jsonListColumn(Object? v) {
+  if (v == null) return const [];
+  if (v is String) {
+    try {
+      return jsonDecode(v) as List<dynamic>;
+    } catch (_) {
+      return const [];
+    }
+  }
+  if (v is List) return v;
+  return const [];
 }
 
 class SyncResult {

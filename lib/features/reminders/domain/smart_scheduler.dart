@@ -85,13 +85,14 @@ class SmartScheduler {
     if (on(DhikrCategory.sleep)) {
       var at = p[AppPrayer.isha].add(Duration(minutes: sleepOffset));
       // Sleep adhkar belong to bedtime: if they would land deep inside quiet
-      // hours, pull them just before quiet hours begin instead.
+      // hours, pull them just before quiet hours begin. The anchor is the
+      // *schedule* day (ctx.date), never the reminder's own day — Isha+offset
+      // can roll past midnight, and anchoring to the reminder would then push
+      // the pull-back target to the *following* evening (21h late, review H5).
       if (ctx.quietHours.contains(at)) {
-        final quietStart = DateTime(at.year, at.month, at.day)
+        final quietStart = DateTime(ctx.date.year, ctx.date.month, ctx.date.day)
             .add(Duration(minutes: ctx.quietHours.startMinutes - 10));
-        if (quietStart.isAfter(at.subtract(const Duration(hours: 2)))) {
-          at = quietStart;
-        }
+        if (quietStart.isBefore(at)) at = quietStart;
       }
       out.add(_r(DhikrCategory.sleep, 'أذكار النوم', 'قبل النوم', at, 3));
     }
@@ -195,20 +196,21 @@ class SmartScheduler {
     var all = unique.values.toList()..sort((a, b) => a.at.compareTo(b.at));
     if (all.length > maxPerDay) {
       // Hard daily cap — notification fatigue protection. Anchors (priority 3)
-      // outrank seasonal lifts (2), which outrank gentle nudges (1). When a
-      // tier overflows, it is thinned *evenly across the day* so reminders
-      // stay spread out instead of clustering in the morning.
+      // outrank seasonal lifts (2), which outrank gentle nudges (1). Within a
+      // tier that overflows, slots are distributed ROUND-ROBIN across
+      // categories so no category is permanently starved (review H7): every
+      // enabled category keeps a daily presence before any gets a second slot.
       final anchors = all.where((r) => r.priority >= 3).toList();
       final seasonal = all.where((r) => r.priority == 2).toList();
       final nudges = all.where((r) => r.priority < 2).toList();
       final keep = _evenlyTake(anchors, maxPerDay);
       var left = maxPerDay - keep.length;
       if (left > 0) {
-        keep.addAll(_evenlyTake(seasonal, left));
+        keep.addAll(_roundRobinTake(seasonal, left));
         left = maxPerDay - keep.length;
       }
       if (left > 0) {
-        keep.addAll(_evenlyTake(nudges, left));
+        keep.addAll(_roundRobinTake(nudges, left));
       }
       all = keep..sort((a, b) => a.at.compareTo(b.at));
     }
@@ -216,15 +218,49 @@ class SmartScheduler {
   }
 
   /// Picks up to [count] items spaced evenly across a time-sorted [src].
+  /// Always returns a *growable* list (an empty const list would crash the
+  /// caller's addAll when anchors are all disabled — review C2).
   static List<ScheduledReminder> _evenlyTake(
       List<ScheduledReminder> src, int count) {
-    if (count <= 0 || src.isEmpty) return const [];
+    if (count <= 0 || src.isEmpty) return <ScheduledReminder>[];
     if (src.length <= count) return List.of(src);
     final step = src.length / count;
     return [
       for (var i = 0; i < count && (i * step).floor() < src.length; i++)
         src[(i * step).floor()],
     ];
+  }
+
+  /// Picks up to [count] items from a time-sorted list, distributing slots
+  /// round-robin across categories (one per category before seconds).
+  /// Deterministic: categories are visited in enum order.
+  static List<ScheduledReminder> _roundRobinTake(
+      List<ScheduledReminder> timeSorted, int count) {
+    if (count <= 0 || timeSorted.isEmpty) return <ScheduledReminder>[];
+    if (timeSorted.length <= count) return List.of(timeSorted);
+    final pools = <DhikrCategory, List<ScheduledReminder>>{};
+    for (final r in timeSorted) {
+      pools.putIfAbsent(r.category, () => []).add(r);
+    }
+    final cats = pools.keys.toList()
+      ..sort((a, b) => a.index.compareTo(b.index));
+    final cursors = {for (final c in cats) c: 0};
+    final out = <ScheduledReminder>[];
+    while (out.length < count) {
+      var progressed = false;
+      for (final c in cats) {
+        final list = pools[c]!;
+        final j = cursors[c]!;
+        if (j < list.length) {
+          out.add(list[j]);
+          cursors[c] = j + 1;
+          progressed = true;
+          if (out.length >= count) break;
+        }
+      }
+      if (!progressed) break; // every pool exhausted
+    }
+    return out;
   }
 
   int _nudgeCount(FrequencyLevel level, int budget) => switch (level) {

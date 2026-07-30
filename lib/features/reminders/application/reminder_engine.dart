@@ -44,15 +44,12 @@ class ReminderEngine {
     final lng = settings.longitude ?? PrayerTimesService.defaultLng;
 
     final now = DateTime.now();
+    final nowIso = now.toIso8601String();
     final allAdhkar = await db.adhkar();
     final byCategory = <DhikrCategory, List<Dhikr>>{};
     for (final d in allAdhkar) {
       byCategory.putIfAbsent(d.category, () => []).add(d);
     }
-
-    // Fresh slate: re-arm from scratch (delivered notifications in the shade
-    // are unaffected by cancelAll).
-    await NotificationService.instance.cancelAllReminders();
 
     for (var dayOffset = 0; dayOffset <= 1; dayOffset++) {
       final day = DateTime(now.year, now.month, now.day + dayOffset);
@@ -77,7 +74,16 @@ class ReminderEngine {
       );
 
       final plan = scheduler.plan(ctx, profiles);
-      await db.deleteScheduledEventsFor(day.dayKey);
+      // History hygiene (review M6): slots whose time passed become
+      // 'delivered' and are KEPT; only future, still-pending slots are
+      // cancelled & re-created. A replan therefore never wipes undismissed
+      // notifications from the shade, nor the analytics/history trail.
+      await db.markPastScheduledAsDelivered(day.dayKey, nowIso);
+      final pendingIds = await db.pendingNotificationIdsFor(day.dayKey, nowIso);
+      for (final id in pendingIds) {
+        await NotificationService.instance.cancelReminder(id);
+      }
+      await db.deleteFutureScheduledEventsFor(day.dayKey, nowIso);
       for (final r in plan) {
         // Don't schedule moments already past (with a small grace buffer).
         if (r.at.isBefore(now.add(const Duration(seconds: 30)))) continue;
@@ -85,8 +91,11 @@ class ReminderEngine {
         final dhikr = _pickDhikr(byCategory[r.category], r.category);
         if (dhikr == null) continue;
 
-        final notifId =
-            Object.hash(day.dayKey, r.category.name, r.at.minute) & 0x7FFFFFFF;
+        // Include the HOUR in the id input (review H1): 05:05 and 20:05
+        // after-prayer reminders must not collide and overwrite each other.
+        final notifId = Object.hash(
+                day.dayKey, r.category.name, r.at.hour * 60 + r.at.minute) &
+            0x7FFFFFFF;
         final eventId = await db.insertReminderEvent({
           'notification_id': notifId,
           'dhikr_id': dhikr.id,

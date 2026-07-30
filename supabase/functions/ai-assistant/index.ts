@@ -51,7 +51,16 @@ serve(async (req: Request) => {
   }
 
   const userText = (body.user_text ?? "").slice(0, 600);
-  const candidates = body.candidates ?? [];
+  // Review S2: the requester must never grow the prompt (and our OpenAI
+  // bill) without bound — cap item count and serialized field sizes.
+  const candidates = (body.candidates ?? [])
+    .slice(0, 30)
+    .map((c) => ({
+      id: String(c.id ?? "").slice(0, 80),
+      arabic: String(c.arabic ?? "").slice(0, 600),
+      reference: String(c.reference ?? "").slice(0, 200),
+      grade: String(c.grade ?? "").slice(0, 20),
+    }));
 
   if (candidates.length === 0) {
     return json({ selected_ids: [], empathy: "" });
@@ -118,8 +127,7 @@ serve(async (req: Request) => {
       return json({ selected_ids: localRank(userText, candidates), empathy: "", mode: "fallback" });
     }
 
-    const empathy =
-      typeof parsed.empathy === "string" ? parsed.empathy.slice(0, 160) : "";
+    const empathy = sanitizeEmpathy(parsed.empathy);
 
     return json({ selected_ids: selected, empathy, mode: "llm" });
   } catch (_e) {
@@ -130,6 +138,22 @@ serve(async (req: Request) => {
     });
   }
 });
+
+// Review S4: the app renders this line directly above a "verified sources"
+// footer — anything that looks like Quran/hadith text is dropped, the rest
+// is trimmed to one short sentence. The deterministic template intro stays
+// the default; this line only adds warmth.
+function sanitizeEmpathy(raw: unknown): string {
+  if (typeof raw !== "string") return "";
+  const s = raw.trim().replace(/\s+/g, " ");
+  if (!s) return "";
+  const markers = [
+    "ﷺ", "﴿", "﴾", "قال رسول", "قال النبي", "رواه", "عن أبي", "عن عبد",
+    "حديث", "آية", "ﷲ",
+  ];
+  if (markers.some((m) => s.includes(m))) return "";
+  return s.slice(0, 120);
+}
 
 // Simple keyword mirror of the on-device ranker (kept dependency-free).
 function localRank(text: string, candidates: Candidate[]): string[] {

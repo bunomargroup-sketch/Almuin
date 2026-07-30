@@ -79,3 +79,20 @@ class RemoteAiService {
     }
   }
 }
+
+/// Defensive gate for the ONE free-form string the LLM may return (review
+/// S4). Replies carry a footer saying everything comes from verified sources
+/// — so anything that *looks like* Quran/hadith text is dropped, and the
+/// line is capped short. Deterministic template intros remain the default
+/// whether remote AI works or not.
+String sanitizeEmpathy(String raw) {
+  var s = raw.trim().replaceAll(RegExp(r'\s+'), ' ');
+  if (s.isEmpty) return '';
+  const markers = [
+    'ﷺ', '﴿', '﴾', 'قال رسول', 'قال النبي', 'رواه', 'عن أبي', 'عن عبد',
+    'حديث', 'آية', 'ﷲ',
+  ];
+  if (markers.any(s.contains)) return '';
+  if (s.length > 120) s = s.substring(0, 120);
+  return s;
+}

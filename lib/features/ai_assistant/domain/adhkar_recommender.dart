@@ -153,7 +153,9 @@ class AdhkarRecommender {
         AuthenticityGrade.quran => 1.5,
         AuthenticityGrade.sahih => 1.0,
         AuthenticityGrade.hasan => 0.6,
-        AuthenticityGrade.daif => -10, // filtered unless allowWeak
+        // Small penalty only — the `!allowWeak` filter above is the actual
+        // gate. A -10 here made the opt-in mathematically dead (review M12).
+        AuthenticityGrade.daif => -0.5,
         AuthenticityGrade.custom => -1,
       };
       if (nowWindow != null && nowWindow != ContentTime.anytime) {

@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:workmanager/workmanager.dart';
 
 import '../../features/reminders/application/reminder_engine.dart';
+import '../services/timezone_service.dart';
 import '../utils/logger.dart';
 
 /// Unique task names.
@@ -17,6 +18,8 @@ abstract final class BackgroundTasks {
 void backgroundDispatcher() {
   Workmanager().executeTask((task, inputData) async {
     WidgetsFlutterBinding.ensureInitialized();
+    // Fresh isolate ⇒ fresh tz static state; required before any TZDateTime.
+    await TimezoneService.ensureInitialized();
     logInfo('Background task: $task');
     try {
       await ReminderEngine.rescheduleComingDaysHeadless();

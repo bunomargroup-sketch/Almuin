@@ -36,6 +36,12 @@ class AppDatabase {
       path,
       version: _version,
       onCreate: (d, v) async => _createSchema(d),
+      // Present (even if currently empty) so the first schema-version bump
+      // can't crash every installed device at bootstrap (review M7).
+      onUpgrade: (d, oldV, newV) async {
+        // Future migrations land here as: if (oldV < 2) { ... }
+      },
+      onDowngrade: onDatabaseDowngradeDelete,
     );
   }
 
@@ -148,8 +154,7 @@ class AppDatabase {
 
     final batch = d.batch();
     for (final item in adhkarItems) {
-      batch.insert('adhkar', Dhikr.fromJson(item).toRow(),
-          conflictAlgorithm: ConflictAlgorithm.replace);
+      _adhkarUpsertPreserveUser(batch, Dhikr.fromJson(item));
     }
     for (final item in verseItems) {
       final v = Verse.fromJson(item);
@@ -226,8 +231,26 @@ class AppDatabase {
 
   Future<void> upsertDhikr(Dhikr dhikr) async {
     final d = await db;
-    await d.insert('adhkar', dhikr.toRow(),
-        conflictAlgorithm: ConflictAlgorithm.replace);
+    final b = d.batch();
+    _adhkarUpsertPreserveUser(b, dhikr);
+    await b.commit(noResult: true);
+  }
+
+  /// Content-only upsert that NEVER touches `is_favorite`, `times_read`, or
+  /// `last_read_at`. Plain INSERT OR REPLACE resets those user fields to
+  /// defaults on every sync/reseed (review H2) — taking streaks and
+  /// achievements with them.
+  void _adhkarUpsertPreserveUser(Batch batch, Dhikr x) {
+    final row = x.toRow(); // content columns + id only (no user state)
+    final cols = row.keys.toList();
+    final updates =
+        cols.where((c) => c != 'id').map((c) => '$c = excluded.$c').join(', ');
+    batch.rawInsert(
+      'INSERT INTO adhkar(${cols.join(', ')}) '
+      'VALUES (${List.filled(cols.length, '?').join(', ')}) '
+      'ON CONFLICT(id) DO UPDATE SET $updates',
+      [for (final c in cols) row[c]],
+    );
   }
 
   Future<int> setFavorite(String id, bool fav) async {
@@ -359,14 +382,45 @@ class AppDatabase {
     await _bumpProgress(DateTime.now().dayKey, snoozed: true);
   }
 
-  /// Removes still-pending events for a day before a fresh planning pass, so
-  /// analytics denominators stay exact across repeated re-schedules.
-  Future<void> deleteScheduledEventsFor(String day) async {
+  /// Notification ids still armed for [day] (future, still-pending slots) —
+  /// cancelled one-by-one before a fresh planning pass (review M6).
+  Future<List<int>> pendingNotificationIdsFor(String day, String nowIso) async {
+    final d = await db;
+    final rows = await d.query(
+      'reminder_events',
+      columns: ['notification_id'],
+      where:
+          "substr(scheduled_at,1,10) = ? AND status = 'scheduled' AND scheduled_at > ?",
+      whereArgs: [day, nowIso],
+    );
+    return [
+      for (final r in rows)
+        if (r['notification_id'] != null) r['notification_id'] as int,
+    ];
+  }
+
+  /// A slot whose time passed while its status is still 'scheduled' is
+  /// treated as delivered — preserves history & analytics across replans,
+  /// since the OS gives us no delivery callback.
+  Future<void> markPastScheduledAsDelivered(String day, String nowIso) async {
+    final d = await db;
+    await d.rawUpdate(
+      "UPDATE reminder_events SET status = 'delivered', "
+      'delivered_at = COALESCE(delivered_at, scheduled_at) '
+      "WHERE substr(scheduled_at,1,10) = ? AND status = 'scheduled' AND scheduled_at <= ?",
+      [day, nowIso],
+    );
+  }
+
+  /// Removes only re-plannable (future, still-pending) rows for [day] — the
+  /// past stays as history instead of vanishing on every launch (review M6).
+  Future<void> deleteFutureScheduledEventsFor(String day, String nowIso) async {
     final d = await db;
     await d.delete(
       'reminder_events',
-      where: "substr(scheduled_at,1,10) = ? AND status = 'scheduled'",
-      whereArgs: [day],
+      where:
+          "substr(scheduled_at,1,10) = ? AND status = 'scheduled' AND scheduled_at > ?",
+      whereArgs: [day, nowIso],
     );
   }
 
@@ -424,10 +478,8 @@ class AppDatabase {
   /// Completed-per-day series for charts: last [days] days, oldest first.
   Future<List<(String, int)>> progressSeries({int days = 7}) async {
     final d = await db;
-    final from = DateTime.now()
-        .subtract(Duration(days: days - 1))
-        .startOfDay
-        .dayKey;
+    final now = DateTime.now();
+    final from = _calAdd(now, -(days - 1)).dayKey;
     final rows = await d.query('progress_daily',
         where: 'day >= ?', whereArgs: [from], orderBy: 'day');
     final map = {
@@ -438,8 +490,8 @@ class AppDatabase {
     return [
       for (var i = days - 1; i >= 0; i--)
         (
-          DateTime.now().subtract(Duration(days: i)).dayKey,
-          map[DateTime.now().subtract(Duration(days: i)).dayKey] ?? 0,
+          _calAdd(now, -i).dayKey,
+          map[_calAdd(now, -i).dayKey] ?? 0,
         ),
     ];
   }
@@ -494,10 +546,8 @@ class AppDatabase {
 
   Future<List<(String, int)>> tasbeehSeries({int days = 7}) async {
     final d = await db;
-    final from = DateTime.now()
-        .subtract(Duration(days: days - 1))
-        .startOfDay
-        .dayKey;
+    final now = DateTime.now();
+    final from = _calAdd(now, -(days - 1)).dayKey;
     final rows = await d.query('tasbeeh_daily',
         where: 'day >= ?', whereArgs: [from], orderBy: 'day');
     final map = {
@@ -507,8 +557,8 @@ class AppDatabase {
     return [
       for (var i = days - 1; i >= 0; i--)
         (
-          DateTime.now().subtract(Duration(days: i)).dayKey,
-          map[DateTime.now().subtract(Duration(days: i)).dayKey] ?? 0,
+          _calAdd(now, -i).dayKey,
+          map[_calAdd(now, -i).dayKey] ?? 0,
         ),
     ];
   }
@@ -564,9 +614,7 @@ class AppDatabase {
   // ------------------------------------------------------------------
   Future<Set<String>> activeDays({int lookbackDays = 400}) async {
     final d = await db;
-    final from = DateTime.now()
-        .subtract(Duration(days: lookbackDays))
-        .dayKey;
+    final from = _calAdd(DateTime.now(), -lookbackDays).dayKey;
     final rows = await d.rawQuery(
       'SELECT day FROM progress_daily WHERE day >= ? AND (completed > 0 OR adhkar_read > 0) '
       'UNION '
@@ -585,27 +633,42 @@ class AppDatabase {
     var probe = DateTime.now();
     // A quiet today doesn't break the chain yet.
     if (!days.contains(probe.dayKey)) {
-      probe = probe.subtract(const Duration(days: 1));
+      probe = _calAdd(probe, -1);
     }
     while (days.contains(probe.dayKey)) {
       current++;
-      probe = probe.subtract(const Duration(days: 1));
+      probe = _calAdd(probe, -1);
     }
 
     var longest = 0;
     var run = 0;
-    DateTime? prev;
+    String? prevKey;
     final sorted = days.toList()..sort();
     for (final k in sorted) {
-      final dt = DateTime.parse(k);
-      if (prev != null && dt.difference(prev).inDays == 1) {
+      if (prevKey != null && _calDayDistance(k, prevKey) == 1) {
         run++;
       } else {
         run = 1;
       }
       if (run > longest) longest = run;
-      prev = dt;
+      prevKey = k;
     }
     return (current, longest);
   }
+}
+
+/// Calendar-day arithmetic (review M4): `Duration(days: 1)` is 24 absolute
+/// hours, not a calendar day — across DST it skips/duplicates day keys.
+DateTime _calAdd(DateTime t, int days) =>
+    DateTime(t.year, t.month, t.day + days, t.hour, t.minute, t.second);
+
+/// Distance between two `yyyy-MM-dd` day keys in calendar days (UTC parse,
+/// immune to local DST transitions).
+int _calDayDistance(String laterKey, String earlierKey) {
+  DateTime p(String k) {
+    final s = k.split('-');
+    return DateTime.utc(int.parse(s[0]), int.parse(s[1]), int.parse(s[2]));
+  }
+
+  return p(laterKey).difference(p(earlierKey)).inDays;
 }

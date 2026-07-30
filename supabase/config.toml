@@ -27,7 +27,11 @@ enable_signup = true
 enable_anonymous_sign_ins = true
 
 [functions.ai-assistant]
-verify_jwt = false   # validates candidates itself; carries no user data
+# Review S2: an open proxy would let anyone spend the OPENAI_API_KEY.
+# The Flutter SDK sends the anon-key JWT automatically, so this is seamless.
+verify_jwt = true
 
 [functions.daily-content]
-verify_jwt = false   # invoke via service-role from cron
+# Review S3: invoked via service-role JWT from cron; the function also
+# hard-checks the caller role (or a CRON_SECRET) before doing any work.
+verify_jwt = true

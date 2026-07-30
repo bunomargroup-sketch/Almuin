@@ -45,7 +45,7 @@ class AiChatController extends Notifier<List<AiMessage>> {
 
     try {
       final intent = const SituationClassifier().classify(text);
-      final adhkar = await ref.read(adhkarListProvider.future);
+      final adhkar = await ref.read(allAdhkarProvider.future);
       final verses = await ref.read(versesProvider.future);
 
       var bundle = _recommender.recommend(
@@ -71,11 +71,14 @@ class AiChatController extends Notifier<List<AiMessage>> {
               if (byId[id] != null) byId[id]!,
           ];
           if (reordered.isNotEmpty) {
+            // The one free-form string the model may return is sanitized
+            // before it can sit above our "verified sources" footer.
+            final empathy = sanitizeEmpathy(result.empathyAr);
             bundle = RecommendationBundle(
               intent: bundle.intent,
               items: reordered,
-              introAr: result.empathyAr.isNotEmpty
-                  ? '${result.empathyAr}\n${bundle.introAr}'
+              introAr: empathy.isNotEmpty
+                  ? '$empathy\n${bundle.introAr}'
                   : bundle.introAr,
             );
           }

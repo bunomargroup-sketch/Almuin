@@ -1,19 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:timezone/data/latest_all.dart' as tz_data;
-import 'package:timezone/timezone.dart' as tz;
 
 import 'core/config/app_config.dart';
 import 'core/services/app_database.dart';
 import 'core/services/background_service.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/settings_service.dart';
+import 'core/services/timezone_service.dart';
 import 'core/utils/logger.dart';
 
 /// Wires up every platform service and returns a [ProviderContainer] whose
@@ -37,15 +35,9 @@ Future<ProviderContainer> bootstrap() async {
   await initializeDateFormatting('en');
   Intl.defaultLocale = 'ar';
 
-  // 2. Timezone data for zonedSchedule().
-  tz_data.initializeTimeZones();
-  try {
-    final name = await FlutterTimezone.getLocalTimezone();
-    tz.setLocalLocation(tz.getLocation(name));
-  } catch (e, st) {
-    logWarn('Falling back to UTC timezone', e, st);
-    tz.setLocalLocation(tz.UTC);
-  }
+  // 2. Timezone data for zonedSchedule() (UI isolate; background isolates
+  //    re-run this themselves — see TimezoneService).
+  await TimezoneService.ensureInitialized();
 
   // 3. Local database (opens lazily on first query; seed import runs inside).
   await AppDatabase.instance.warmUp();

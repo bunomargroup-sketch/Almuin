@@ -96,7 +96,10 @@ create table if not exists public.profiles (
 
 create table if not exists public.user_favorites (
   user_id      uuid not null references auth.users on delete cascade,
-  dhikr_id     text not null references public.adhkar(id),
+  -- Opaque content key (review M9): the device bundles 74 adhkar while the
+  -- server corpus may seed fewer — an FK here would reject favorites for
+  -- bundled-only items with 23503.
+  dhikr_id     text not null,
   created_at   timestamptz not null default now(),
   primary key (user_id, dhikr_id)
 );
@@ -156,24 +159,38 @@ alter table public.user_progress      enable row level security;
 alter table public.tasbeeh_sessions   enable row level security;
 alter table public.reminder_events    enable row level security;
 alter table public.device_tokens      enable row level security;
+-- Review S1: the moderation audit trail must NOT be readable/writable with
+-- the public anon key. RLS enabled with NO client policies = service-role
+-- only (service role bypasses RLS, so editorial tooling keeps working).
+alter table public.content_moderation_log enable row level security;
 
 -- Content: readable by everyone (even anonymous), writable by service role only.
+drop policy if exists "content_read_adhkar"   on public.adhkar;
 create policy "content_read_adhkar"   on public.adhkar   for select using (true);
+drop policy if exists "content_read_verses"   on public.verses;
 create policy "content_read_verses"   on public.verses   for select using (true);
+drop policy if exists "content_read_hadiths"  on public.hadiths;
 create policy "content_read_hadiths"  on public.hadiths  for select using (true);
+drop policy if exists "content_read_daily"    on public.daily_content;
 create policy "content_read_daily"    on public.daily_content for select using (true);
 
 -- User tables: strict ownership.
+drop policy if exists "own_profile"      on public.profiles;
 create policy "own_profile"      on public.profiles
   using (auth.uid() = id) with check (auth.uid() = id);
+drop policy if exists "own_favorites"    on public.user_favorites;
 create policy "own_favorites"    on public.user_favorites
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own_progress"     on public.user_progress;
 create policy "own_progress"     on public.user_progress
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own_tasbeeh"      on public.tasbeeh_sessions;
 create policy "own_tasbeeh"      on public.tasbeeh_sessions
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own_events"       on public.reminder_events;
 create policy "own_events"       on public.reminder_events
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own_tokens"       on public.device_tokens;
 create policy "own_tokens"       on public.device_tokens
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
@@ -188,12 +205,16 @@ begin
   return new;
 end $$;
 
+drop trigger if exists adhkar_touch on public.adhkar;
 create trigger adhkar_touch  before update on public.adhkar
   for each row execute function public.touch_updated_at();
+drop trigger if exists verses_touch on public.verses;
 create trigger verses_touch  before update on public.verses
   for each row execute function public.touch_updated_at();
+drop trigger if exists hadiths_touch on public.hadiths;
 create trigger hadiths_touch before update on public.hadiths
   for each row execute function public.touch_updated_at();
+drop trigger if exists profiles_touch on public.profiles;
 create trigger profiles_touch before update on public.profiles
   for each row execute function public.touch_updated_at();
 
@@ -201,3 +222,11 @@ create trigger profiles_touch before update on public.profiles
 create index if not exists idx_adhkar_updated   on public.adhkar(updated_at);
 create index if not exists idx_verses_updated   on public.verses(updated_at);
 create index if not exists idx_hadiths_updated  on public.hadiths(updated_at);
+
+-- Review M8: user tables are filtered by user_id (app queries AND the RLS
+-- predicate itself) — index them or reads sequentially scan all users' rows.
+create index if not exists idx_user_favorites_user   on public.user_favorites(user_id);
+create index if not exists idx_user_progress_user    on public.user_progress(user_id, day);
+create index if not exists idx_tasbeeh_sessions_user on public.tasbeeh_sessions(user_id, started_at);
+create index if not exists idx_reminder_events_user  on public.reminder_events(user_id, scheduled_at);
+create index if not exists idx_device_tokens_user    on public.device_tokens(user_id);

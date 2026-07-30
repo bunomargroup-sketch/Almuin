@@ -135,6 +135,37 @@ void main() {
           ctx(day, friday: true, ramadan: true, travel: true, freq: FrequencyLevel.high),
           allOn());
       expect(plan.length, lessThanOrEqualTo(14));
+      expect(plan, isNotEmpty); // cap, not starvation
+    });
+
+    test('no anchors ON still plans safely under cap (regression C2)', () {
+      final profiles = [
+        for (final c in DhikrCategory.values)
+          ReminderProfile(
+            category: c,
+            enabled: !const {
+              DhikrCategory.morning,
+              DhikrCategory.evening,
+              DhikrCategory.afterPrayer,
+              DhikrCategory.sleep,
+              DhikrCategory.wakeUp,
+            }.contains(c),
+            frequency: FrequencyLevel.high,
+          ),
+      ];
+      final plan = scheduler.plan(
+        ctx(day, friday: true, ramadan: true, travel: true,
+            freq: FrequencyLevel.high),
+        profiles,
+      );
+      expect(plan.length, lessThanOrEqualTo(14));
+      expect(plan, isNotEmpty);
+    });
+
+    test('cap sharing is fair: quran keeps a daily slot (regression H7)', () {
+      final plan = scheduler.plan(ctx(day), allOn());
+      expect(plan.any((r) => r.category == DhikrCategory.quran), isTrue,
+          reason: 'round-robin sharing must not starve any category');
     });
 
     test('nudges inside quiet hours are deferred out of them', () {

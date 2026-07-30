@@ -99,10 +99,13 @@ void main() {
     const allowWeak = AdhkarRecommender(allowWeak: true);
     final b = allowWeak.recommend(
         intent: SituationIntent.anxiety, adhkar: base, verses: verses);
-    final weak = b.items.where((i) => i.grade == AuthenticityGrade.daif);
-    for (final w in weak) {
-      // The grade is carried so the UI renders the "ضعيف" badge.
-      expect(w.grade, AuthenticityGrade.daif);
-    }
+    final weak =
+        b.items.where((i) => i.grade == AuthenticityGrade.daif).toList();
+    // Not vacuous (review M12): the opt-in must ACTUALLY surface the weak
+    // item it was guarding — and the grade travels for the ضعيف badge.
+    expect(weak.map((i) => i.id), contains('d_weak'));
+    expect(weak.first.grade, AuthenticityGrade.daif);
+    // Wrapped around authentic content, never displacing it entirely.
+    expect(b.items.map((i) => i.id), contains('d1'));
   });
 }

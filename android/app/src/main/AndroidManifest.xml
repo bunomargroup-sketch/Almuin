@@ -9,9 +9,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <!-- Smart reminders -->
+    <!-- Review M2: no USE_EXACT_ALARM — Google Play restricts it to alarm
+         clock / calendar apps. SCHEDULE_EXACT_ALARM + the in-app runtime
+         request (with automatic inexact fallback) is the permitted path. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -54,4 +56,13 @@
             android:name="flutterEmbedding"
             android:value="2"/>
     </application>
+
+    <!-- Review M3: Android 11+ (API 30+) hides the TTS engine from apps that
+         don't declare it — without this, "استمع" (read aloud) silently does
+         nothing on modern devices. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 </manifest>

@@ -13,10 +13,7 @@ import 'core/theme/app_theme.dart';
 /// RTL is automatic: `MaterialApp` derives `Directionality` from the active
 /// locale (`ar` => RTL, `en` => LTR). Arabic is the first-class locale.
 class AlmuinApp extends ConsumerWidget {
-  const AlmuinApp({super.key, required this.parentContainer});
-
-  /// Kept for future background callbacks that need the same overrides.
-  final ProviderContainer parentContainer;
+  const AlmuinApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

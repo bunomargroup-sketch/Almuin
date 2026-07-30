@@ -27,6 +27,14 @@ final adhkarListProvider = FutureProvider<List<Dhikr>>((ref) async {
   return repo.all(category: category, query: query);
 });
 
+/// The complete, UNFILTERED corpus (review H4). Engines that must reason
+/// over everything — the AI recommender, reminder content picking — read this
+/// instead of the library's filter-aware list.
+final allAdhkarProvider = FutureProvider<List<Dhikr>>((ref) async {
+  await ref.watch(seededProvider.future);
+  return ref.watch(dhikrRepositoryProvider).all();
+});
+
 final dhikrProvider =
     FutureProvider.autoDispose.family<Dhikr?, String>((ref, id) async {
   await ref.watch(seededProvider.future);

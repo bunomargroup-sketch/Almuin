@@ -56,8 +56,9 @@ class SituationClassifier {
       'travelling', 'trip', 'flight', 'journey', 'driving',
     ],
     SituationIntent.gratitude: [
-      'شكر', 'الحمد', 'امتنان', 'نعم', 'ممتن', 'سعيد', 'فرح', 'فرحان',
-      'grateful', 'thankful', 'happy', 'blessing', 'alhamdulillah', 'joy',
+      'شكر', 'الحمد', 'امتنان', 'نعمه', 'نعمات', 'ممتن', 'سعيد', 'فرح',
+      'فرحان', 'grateful', 'thankful', 'happy', 'blessing', 'alhamdulillah',
+      'joy',
     ],
     SituationIntent.anger: [
       'غاضب', 'غضب', 'زعلان', 'عصبية', 'أعصاب', 'angry', 'anger', 'furious',
@@ -72,7 +73,7 @@ class SituationClassifier {
       'study', 'studying', 'interview', 'مقابلة',
     ],
     SituationIntent.financialHardship: [
-      'وظيفة', 'فصلت من العمل', 'رزق', 'دين', 'فقر', 'ضائقة مالية',
+      'وظيفة', 'فصلت من العمل', 'رزق', 'ديون', 'فقر', 'ضائقة مالية',
       'job', 'fired', 'laid off', 'lost my job', 'money', 'debt', 'broke',
     ],
     SituationIntent.rain: [
@@ -94,11 +95,12 @@ class SituationClassifier {
 
   IntentMatch classify(String text) {
     final lower = _normalize(text);
+    final tokens = lower.split(' ');
     final scores = <SituationIntent, double>{};
     for (final entry in _normalizedKeywords.entries) {
       var score = 0.0;
       for (final kw in entry.value) {
-        if (lower.contains(kw)) {
+        if (_keywordHits(kw, lower, tokens)) {
           score += kw.length > 4 ? 1.0 : 0.6;
         }
       }
@@ -115,6 +117,36 @@ class SituationClassifier {
         (best.value / 2.5 + relationalBoost).clamp(0.0, 1.0).toDouble();
     return IntentMatch(best.key, confidence);
   }
+
+  /// A keyword matches when an input TOKEN equals it (or starts with it for
+  /// stems of 4+ letters) — after Arabic prefix variants are considered.
+  /// Bare substring matching made ثلاثي stems fire inside unrelated words:
+  /// «اللهم» matched «هم» (worry), «ديني» matched «دين» (debt) — review H8.
+  bool _keywordHits(String kw, String lower, List<String> tokens) {
+    if (kw.isEmpty) return false;
+    // Multi-word phrases are distinctive enough for plain substring matching.
+    if (kw.contains(' ')) return lower.contains(kw);
+    for (final t in tokens) {
+      for (final v in _variants(t)) {
+        if (v == kw) return true;
+        if (kw.length >= 4 && v.startsWith(kw)) return true;
+      }
+    }
+    return false;
+  }
+
+  /// Arabic token variants: original · without a leading single-letter
+  /// prefix (و ف ب ك ل) · without the article ال · without both.
+  static Iterable<String> _variants(String token) sync* {
+    yield token;
+    if (_prefixable(token)) yield token.substring(1);
+    if (token.startsWith('ال')) yield token.substring(2);
+    if (_prefixable(token) && token.substring(1).startsWith('ال')) {
+      yield token.substring(3);
+    }
+  }
+
+  static bool _prefixable(String t) => t.length > 2 && 'وفبكل'.contains(t[0]);
 
   static String _normalize(String s) => s
       .toLowerCase()

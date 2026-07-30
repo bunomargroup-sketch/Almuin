@@ -54,6 +54,23 @@ void main() {
     });
   });
 
+  group('Word-boundary regressions (review H8)', () {
+    test('blessing the Prophet is not "worry" (هم inside اللهم)', () {
+      final m = clf.classify('اللهم صلِّ على النبي');
+      expect(m.intent, isNot(SituationIntent.worry));
+    });
+
+    test('plain "yes" is not gratitude (نعم is an ordinary word)', () {
+      final m = clf.classify('نعم أنا بخير الحمد لله');
+      expect(m.intent, SituationIntent.gratitude); // الحمد, not نعم
+    });
+
+    test('religion is not debt (ديني vs دين/ديون)', () {
+      final m = clf.classify('أريد أن أتقوى في ديني وألتزم أكثر');
+      expect(m.intent, isNot(SituationIntent.financialHardship));
+    });
+  });
+
   group('English situations', () {
     test('stressed', () {
       expect(clf.classify('I feel stressed and anxious').intent,
