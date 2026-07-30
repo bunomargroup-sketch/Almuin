@@ -20,8 +20,9 @@ abstract final class TimezoneService {
     _initialized = true;
     tz_data.initializeTimeZones();
     try {
-      final name = await FlutterTimezone.getLocalTimezone();
-      tz.setLocalLocation(tz.getLocation(name));
+      // flutter_timezone 5.x returns a TimezoneInfo, not a bare String.
+      final info = await FlutterTimezone.getLocalTimezone();
+      tz.setLocalLocation(tz.getLocation(info.identifier));
     } catch (e, st) {
       logWarn('Timezone lookup failed — using UTC', e, st);
       tz.setLocalLocation(tz.UTC);
