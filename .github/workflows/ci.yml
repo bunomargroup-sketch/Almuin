@@ -21,7 +21,10 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.0'
+          # Not pinned: share_plus ^13.3.0 requires Dart >=3.10.0, so the
+          # project needs a much newer toolchain than pubspec.yaml's declared
+          # floors (sdk ^3.6.0 / flutter >=3.27.0) allow. Track stable until
+          # those floors are corrected, then pin again.
           channel: stable
           cache: true
 
@@ -88,7 +91,10 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.0'
+          # Not pinned: share_plus ^13.3.0 requires Dart >=3.10.0, so the
+          # project needs a much newer toolchain than pubspec.yaml's declared
+          # floors (sdk ^3.6.0 / flutter >=3.27.0) allow. Track stable until
+          # those floors are corrected, then pin again.
           channel: stable
           cache: true
 
