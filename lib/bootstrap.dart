@@ -40,8 +40,9 @@ Future<ProviderContainer> bootstrap() async {
   // 2. Timezone data for zonedSchedule().
   tz_data.initializeTimeZones();
   try {
-    final name = await FlutterTimezone.getLocalTimezone();
-    tz.setLocalLocation(tz.getLocation(name));
+    // flutter_timezone 5.x returns a TimezoneInfo rather than a bare String.
+    final info = await FlutterTimezone.getLocalTimezone();
+    tz.setLocalLocation(tz.getLocation(info.identifier));
   } catch (e, st) {
     logWarn('Falling back to UTC timezone', e, st);
     tz.setLocalLocation(tz.UTC);
