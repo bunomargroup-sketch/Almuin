@@ -77,7 +77,7 @@ class NotificationService {
   }
 
   Future<void> init() async {
-    const init = InitializationSettings(
+    final init = InitializationSettings(
       android: AndroidInitializationSettings('@mipmap/ic_launcher'),
       iOS: DarwinInitializationSettings(
         requestAlertPermission: false, // requested after onboarding
@@ -221,6 +221,8 @@ class NotificationService {
         scheduled,
         _details(bigText: arabicBody, reason: reason),
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
         payload: payload,
       );
     } catch (e, st) {
@@ -232,6 +234,8 @@ class NotificationService {
         scheduled,
         _details(bigText: arabicBody, reason: reason),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
         payload: payload,
       );
     }

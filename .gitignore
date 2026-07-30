@@ -11,6 +11,8 @@ coverage/
 
 # Generated localization / codegen
 lib/generated/
+lib/l10n/app_localizations.dart
+lib/l10n/app_localizations_*.dart
 **/generated_plugin_registrant.*
 
 # Android

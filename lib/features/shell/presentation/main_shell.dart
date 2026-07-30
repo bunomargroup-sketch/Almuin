@@ -31,7 +31,7 @@ class _MainShellState extends ConsumerState<MainShell> {
   @override
   void initState() {
     super.initState();
-    _linkSub = NotificationService.instance.deepLinkTap.listen(_open);
+    _linkSub = NotificationService.instance.deepLinkTap.stream.listen(_open);
     _drainPendingLink();
     // First-run planning (idempotent — the engine re-arms from scratch).
     WidgetsBinding.instance.addPostFrameCallback((_) {

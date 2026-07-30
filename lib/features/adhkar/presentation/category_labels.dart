@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 import '../../../core/extensions/context_x.dart';
 import '../domain/dhikr.dart';

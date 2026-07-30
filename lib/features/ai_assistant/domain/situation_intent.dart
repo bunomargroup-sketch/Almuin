@@ -28,6 +28,8 @@ class IntentMatch {
 }
 
 class SituationClassifier {
+  const SituationClassifier();
+
   /// Keyword banks: Arabic stems + English words, weighted.
   static const Map<SituationIntent, List<String>> _keywords = {
     SituationIntent.anxiety: [

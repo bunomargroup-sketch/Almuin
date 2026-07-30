@@ -194,19 +194,37 @@ class SmartScheduler {
     }
     var all = unique.values.toList()..sort((a, b) => a.at.compareTo(b.at));
     if (all.length > maxPerDay) {
-      final keep = all.where((r) => r.priority >= 2).toList();
-      final rest = all.where((r) => r.priority < 2).toList();
-      // Evenly thin out nudges while keeping anchors.
-      final slotsLeft = maxPerDay - keep.length;
-      if (slotsLeft > 0) {
-        final step = rest.length / slotsLeft;
-        for (var i = 0; i < slotsLeft && (i * step).floor() < rest.length; i++) {
-          keep.add(rest[(i * step).floor()]);
-        }
+      // Hard daily cap — notification fatigue protection. Anchors (priority 3)
+      // outrank seasonal lifts (2), which outrank gentle nudges (1). When a
+      // tier overflows, it is thinned *evenly across the day* so reminders
+      // stay spread out instead of clustering in the morning.
+      final anchors = all.where((r) => r.priority >= 3).toList();
+      final seasonal = all.where((r) => r.priority == 2).toList();
+      final nudges = all.where((r) => r.priority < 2).toList();
+      final keep = _evenlyTake(anchors, maxPerDay);
+      var left = maxPerDay - keep.length;
+      if (left > 0) {
+        keep.addAll(_evenlyTake(seasonal, left));
+        left = maxPerDay - keep.length;
+      }
+      if (left > 0) {
+        keep.addAll(_evenlyTake(nudges, left));
       }
       all = keep..sort((a, b) => a.at.compareTo(b.at));
     }
     return all;
+  }
+
+  /// Picks up to [count] items spaced evenly across a time-sorted [src].
+  static List<ScheduledReminder> _evenlyTake(
+      List<ScheduledReminder> src, int count) {
+    if (count <= 0 || src.isEmpty) return const [];
+    if (src.length <= count) return List.of(src);
+    final step = src.length / count;
+    return [
+      for (var i = 0; i < count && (i * step).floor() < src.length; i++)
+        src[(i * step).floor()],
+    ];
   }
 
   int _nudgeCount(FrequencyLevel level, int budget) => switch (level) {

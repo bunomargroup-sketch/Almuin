@@ -44,7 +44,7 @@ class BackgroundService {
       frequency: const Duration(hours: 12),
       existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
       constraints: Constraints(
-        networkType: NetworkType.not_required, // reminders work offline
+        networkType: NetworkType.notRequired, // reminders work offline
       ),
       backoffPolicy: BackoffPolicy.exponential,
       backoffPolicyDelay: const Duration(minutes: 30),
