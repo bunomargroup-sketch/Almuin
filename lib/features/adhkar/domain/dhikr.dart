@@ -20,6 +20,7 @@ enum DhikrCategory {
   salawat,
   quran,
   hadith,
+  dua,
   custom;
 
   static DhikrCategory fromName(String? name) => DhikrCategory.values

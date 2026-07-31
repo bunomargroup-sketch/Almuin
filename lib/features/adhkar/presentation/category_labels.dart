@@ -26,6 +26,7 @@ String adhkarCategoryLabel(BuildContext context, DhikrCategory c) {
     DhikrCategory.salawat => l10n.catSalawat,
     DhikrCategory.quran => l10n.catQuran,
     DhikrCategory.hadith => l10n.catHadith,
+    DhikrCategory.dua => l10n.catDua,
     DhikrCategory.custom => l10n.catCustom,
   };
 }
@@ -51,6 +52,7 @@ extension DhikrCategoryIcon on DhikrCategory {
         DhikrCategory.salawat => Icons.auto_awesome,
         DhikrCategory.quran => Icons.menu_book_outlined,
         DhikrCategory.hadith => Icons.format_quote_outlined,
+        DhikrCategory.dua => Icons.pan_tool_outlined,
         DhikrCategory.custom => Icons.edit_note,
       };
 }

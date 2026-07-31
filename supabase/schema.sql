@@ -22,7 +22,7 @@ create table if not exists public.adhkar (
                      'morning','evening','afterPrayer','sleep','wakeUp',
                      'enterHome','leaveHome','enterMosque','leaveMosque',
                      'travel','rain','distress','gratitude','istighfar',
-                     'tasbeeh','salawat','quran','hadith','custom')),
+                     'tasbeeh','salawat','quran','hadith', 'dua','custom')),
   time_pref        text not null default 'anytime',
   arabic           text not null,
   transliteration  text not null default '',

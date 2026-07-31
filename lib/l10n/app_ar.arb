@@ -146,5 +146,11 @@
   "notifReasonRamadan": "رمضان — اغتنم الشهر",
   "streakEncouragement": "ما شاء الله، استمر! أحب الأعمال إلى الله أدومها وإن قلّ.",
   "favoritesEmpty": "لم تضف أذكارًا للمفضلة بعد",
-  "searchHint": "ابحث في الأذكار…"
+  "searchHint": "ابحث في الأذكار…",
+  "homeContextTitle": "مناسبة اليوم",
+  "settingsContextSection": "اقتراحات السياق",
+  "settingsContextWeather": "حسب طقس مكانك",
+  "settingsContextNews": "عند أخبار مؤلمة",
+  "settingsContextNewsHint": "يقرأ الجهاز عناوين الأخبار محليًا ليقترح ذكرًا للصبر عند وقوع مصيبة. لا يُعرض أي خبر، ولا يُذكر مكان أو طرف.",
+  "catDua": "الدعاء"
 }

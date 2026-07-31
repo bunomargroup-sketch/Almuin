@@ -7,7 +7,7 @@ name: Debug APK
 
 on:
   push:
-    branches: ["main", "arena/**", "fix/**"]
+    branches: ["main", "arena/**", "fix/**", "feat/**"]
   workflow_dispatch:
 
 permissions:
