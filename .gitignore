@@ -46,3 +46,6 @@ assets/fonts/*.otf
 # OS noise
 .DS_Store
 Thumbs.db
+
+# scratch commit-message file
+.commitmsg
