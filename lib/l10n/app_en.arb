@@ -150,5 +150,6 @@
   "settingsContextSection": "Contextual suggestions",
   "settingsContextWeather": "Based on your local weather",
   "settingsContextNews": "On distressing news",
-  "settingsContextNewsHint": "Your device reads headlines locally to suggest a dhikr of patience when something grievous happens. No headline is shown, and no place or party is named."
+  "settingsContextNewsHint": "Your device reads headlines locally to suggest a dhikr of patience when something grievous happens. No headline is shown, and no place or party is named.",
+  "catDua": "Supplication"
 }

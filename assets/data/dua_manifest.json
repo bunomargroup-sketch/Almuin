@@ -1,0 +1,3105 @@
+{
+ "meta": {
+  "title": "مانيفست الدعاء — مراجع فقط، بلا نصوص",
+  "purpose": "References only. The `arabic` field is intentionally EMPTY and MUST be filled from an authoritative vocalised corpus before any item is seeded. See docs/DUA_SOURCING.md.",
+  "sources": [
+   {
+    "name": "جامع الدعاء من القرآن والسنة",
+    "author": "الشيخ صلاح نجيب الدق",
+    "url": "https://www.alukah.net/sharia/0/108314/",
+    "use": "index of items and their takhrij"
+   },
+   {
+    "name": "فقه الدعاء والذكر — سلسلة مفاهيم",
+    "author": "الشيخ محمد الحسن الددو الشنقيطي",
+    "use": "fiqh guidance and flagged-weak list only; NOT a text source (see docs/FIQH_ALDUA.md)"
+   }
+  ],
+  "counts": {
+   "quran": 58,
+   "sunnah": 104,
+   "total": 162
+  },
+  "textStatus": "pending"
+ },
+ "items": [
+  {
+   "id": "dua_q_001",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الفاتحة 6-7",
+    "grade": "quran"
+   },
+   "incipit": "اهدنا الصراط المستقيم",
+   "tags": [
+    "dua",
+    "guidance",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_002",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 127",
+    "grade": "quran"
+   },
+   "incipit": "ربنا تقبل منا",
+   "tags": [
+    "acceptance",
+    "dua",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_003",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 201",
+    "grade": "quran"
+   },
+   "incipit": "ربنا آتنا في الدنيا",
+   "tags": [
+    "dua",
+    "general",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_004",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 250",
+    "grade": "quran"
+   },
+   "incipit": "ربنا أفرغ علينا صبرا",
+   "tags": [
+    "dua",
+    "fear",
+    "patience",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_005",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 286",
+    "grade": "quran"
+   },
+   "incipit": "ربنا لا تؤاخذنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_006",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 286",
+    "grade": "quran"
+   },
+   "incipit": "ربنا ولا تحمل علينا",
+   "tags": [
+    "dua",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_007",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "البقرة 286",
+    "grade": "quran"
+   },
+   "incipit": "ربنا ولا تحملنا ما",
+   "tags": [
+    "dua",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_008",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 8",
+    "grade": "quran"
+   },
+   "incipit": "ربنا لا تزغ قلوبنا",
+   "tags": [
+    "dua",
+    "quran",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_009",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 16",
+    "grade": "quran"
+   },
+   "incipit": "ربنا إننا آمنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_010",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 38",
+    "grade": "quran"
+   },
+   "incipit": "رب هب لي من",
+   "tags": [
+    "dua",
+    "offspring",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_011",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 53",
+    "grade": "quran"
+   },
+   "incipit": "ربنا آمنا بما",
+   "tags": [
+    "dua",
+    "quran",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_012",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 147",
+    "grade": "quran"
+   },
+   "incipit": "ربنا اغفر لنا ذنوبنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "quran",
+    "victory"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_013",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 173",
+    "grade": "quran"
+   },
+   "incipit": "حسبنا الله ونعم",
+   "tags": [
+    "dua",
+    "fear",
+    "quran",
+    "trust"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_014",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 191",
+    "grade": "quran"
+   },
+   "incipit": "ربنا ما خلقت",
+   "tags": [
+    "contemplation",
+    "dua",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_015",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 193",
+    "grade": "quran"
+   },
+   "incipit": "ربنا إننا سمعنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_016",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "آل عمران 194",
+    "grade": "quran"
+   },
+   "incipit": "ربنا وآتنا ما",
+   "tags": [
+    "dua",
+    "hereafter",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_017",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "النساء 75",
+    "grade": "quran"
+   },
+   "incipit": "واجعل لنا من",
+   "tags": [
+    "dua",
+    "oppression",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_018",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "المائدة 114",
+    "grade": "quran"
+   },
+   "incipit": "وارزقنا وأنت خير",
+   "tags": [
+    "dua",
+    "quran",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_019",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 23",
+    "grade": "quran"
+   },
+   "incipit": "ربنا ظلمنا أنفسنا",
+   "tags": [
+    "dua",
+    "quran",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_020",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 89",
+    "grade": "quran"
+   },
+   "incipit": "ربنا افتح بيننا",
+   "tags": [
+    "dua",
+    "justice",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_021",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 126",
+    "grade": "quran"
+   },
+   "incipit": "ربنا أفرغ علينا صبرا",
+   "tags": [
+    "dua",
+    "patience",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_022",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 150",
+    "grade": "quran"
+   },
+   "incipit": "فلا تشمت بي",
+   "tags": [
+    "dua",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_023",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 151",
+    "grade": "quran"
+   },
+   "incipit": "وأدخلنا في رحمتك",
+   "tags": [
+    "dua",
+    "mercy",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_024",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأعراف 155",
+    "grade": "quran"
+   },
+   "incipit": "أنت ولينا فاغفر",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_025",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "يونس 85-86",
+    "grade": "quran"
+   },
+   "incipit": "ربنا لا تجعلنا",
+   "tags": [
+    "dua",
+    "oppression",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_026",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "يوسف 101",
+    "grade": "quran"
+   },
+   "incipit": "فاطر السماوات والأرض",
+   "tags": [
+    "death",
+    "dua",
+    "quran",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_027",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "إبراهيم 40",
+    "grade": "quran"
+   },
+   "incipit": "رب اجعلني مقيم",
+   "tags": [
+    "dua",
+    "offspring",
+    "prayer",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_028",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "إبراهيم 41",
+    "grade": "quran"
+   },
+   "incipit": "ربنا اغفر لي",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "parents",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_029",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الإسراء 24",
+    "grade": "quran"
+   },
+   "incipit": "رب ارحمهما كما",
+   "tags": [
+    "dua",
+    "parents",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_030",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الإسراء 80",
+    "grade": "quran"
+   },
+   "incipit": "رب أدخلني مدخل",
+   "tags": [
+    "dua",
+    "quran",
+    "sincerity",
+    "travel"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_031",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الكهف 10",
+    "grade": "quran"
+   },
+   "incipit": "ربنا آتنا من",
+   "tags": [
+    "dua",
+    "guidance",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_032",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "طه 25-26",
+    "grade": "quran"
+   },
+   "incipit": "رب اشرح لي",
+   "tags": [
+    "dua",
+    "ease",
+    "quran",
+    "speech"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_033",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "طه 114",
+    "grade": "quran"
+   },
+   "incipit": "رب زدني علما",
+   "tags": [
+    "dua",
+    "knowledge",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_034",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأنبياء 87",
+    "grade": "quran"
+   },
+   "incipit": "لا إله إلا أنت",
+   "tags": [
+    "distress",
+    "dua",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_035",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأنبياء 89",
+    "grade": "quran"
+   },
+   "incipit": "رب لا تذرني",
+   "tags": [
+    "dua",
+    "offspring",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_036",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "المؤمنون 29",
+    "grade": "quran"
+   },
+   "incipit": "رب أنزلني منزلا",
+   "tags": [
+    "dua",
+    "quran",
+    "rizq",
+    "travel"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_037",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "المؤمنون 97-98",
+    "grade": "quran"
+   },
+   "incipit": "رب أعوذ بك",
+   "tags": [
+    "dua",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_038",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "المؤمنون 109",
+    "grade": "quran"
+   },
+   "incipit": "ربنا آمنا فاغفر",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "mercy",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_039",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "المؤمنون 118",
+    "grade": "quran"
+   },
+   "incipit": "رب اغفر وارحم",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "mercy",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_040",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الفرقان 65-66",
+    "grade": "quran"
+   },
+   "incipit": "ربنا اصرف عنا",
+   "tags": [
+    "dua",
+    "hereafter",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_041",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الفرقان 74",
+    "grade": "quran"
+   },
+   "incipit": "ربنا هب لنا",
+   "tags": [
+    "dua",
+    "family",
+    "offspring",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_042",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الشعراء 84-85",
+    "grade": "quran"
+   },
+   "incipit": "واجعل لي لسان",
+   "tags": [
+    "dua",
+    "legacy",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_043",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الشعراء 87-89",
+    "grade": "quran"
+   },
+   "incipit": "ولا تخزني يوم",
+   "tags": [
+    "dua",
+    "hereafter",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_044",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "القصص 16",
+    "grade": "quran"
+   },
+   "incipit": "رب إني ظلمت",
+   "tags": [
+    "dua",
+    "quran",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_045",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "القصص 21",
+    "grade": "quran"
+   },
+   "incipit": "رب نجني من",
+   "tags": [
+    "dua",
+    "fear",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_046",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "القصص 24",
+    "grade": "quran"
+   },
+   "incipit": "رب إني لما",
+   "tags": [
+    "dua",
+    "need",
+    "quran",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_047",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "العنكبوت 30",
+    "grade": "quran"
+   },
+   "incipit": "رب انصرني على",
+   "tags": [
+    "dua",
+    "quran",
+    "victory"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_048",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الصافات 100",
+    "grade": "quran"
+   },
+   "incipit": "رب هب لي",
+   "tags": [
+    "dua",
+    "offspring",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_049",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "غافر 7",
+    "grade": "quran"
+   },
+   "incipit": "ربنا وسعت كل",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "mercy",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_050",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "غافر 8-9",
+    "grade": "quran"
+   },
+   "incipit": "ربنا وأدخلهم",
+   "tags": [
+    "dua",
+    "family",
+    "hereafter",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_051",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الدخان 12",
+    "grade": "quran"
+   },
+   "incipit": "ربنا اكشف عنا",
+   "tags": [
+    "distress",
+    "dua",
+    "quran",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_052",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الأحقاف 15",
+    "grade": "quran"
+   },
+   "incipit": "رب أوزعني أن",
+   "tags": [
+    "dua",
+    "gratitude",
+    "parents",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_053",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الحشر 10",
+    "grade": "quran"
+   },
+   "incipit": "ربنا اغفر لنا",
+   "tags": [
+    "brotherhood",
+    "dua",
+    "forgiveness",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_054",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الممتحنة 4",
+    "grade": "quran"
+   },
+   "incipit": "ربنا عليك توكلنا",
+   "tags": [
+    "dua",
+    "quran",
+    "trust"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_055",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "الممتحنة 5",
+    "grade": "quran"
+   },
+   "incipit": "ربنا لا تجعلنا",
+   "tags": [
+    "dua",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_056",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "التحريم 8",
+    "grade": "quran"
+   },
+   "incipit": "ربنا أتمم لنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "light",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_057",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "التحريم 11",
+    "grade": "quran"
+   },
+   "incipit": "رب ابن لي",
+   "tags": [
+    "dua",
+    "oppression",
+    "protection",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_q_058",
+   "category": "dua",
+   "time": "anytime",
+   "source": "quran",
+   "reference": {
+    "collection": "القرآن الكريم",
+    "number": "نوح 28",
+    "grade": "quran"
+   },
+   "incipit": "رب اغفر لي",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "parents",
+    "quran"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_001",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6357",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم صل على محمد",
+   "tags": [
+    "dua",
+    "salawat"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_002",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "834",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني ظلمت نفسي",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "prayer"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_003",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "1014",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أغثنا",
+   "tags": [
+    "dua",
+    "rain"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_004",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "1377",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من عذاب القبر",
+   "tags": [
+    "dua",
+    "hereafter",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_005",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "3294",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إنك عفو",
+   "tags": [
+    "dua",
+    "forgiveness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_006",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "2932",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أنج المستضعفين",
+   "tags": [
+    "dua",
+    "oppression"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_007",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "3391",
+    "grade": "sahih"
+   },
+   "incipit": "يا رب لا غنى لي",
+   "tags": [
+    "dua",
+    "need"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_008",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "5671",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أحيني ما كانت",
+   "tags": [
+    "death",
+    "dua",
+    "illness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_009",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6306",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أنت ربي لا إله",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "istighfar"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_010",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6316",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اجعل في قلبي نورا",
+   "tags": [
+    "dua",
+    "light",
+    "night"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_011",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6363",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من الهم",
+   "tags": [
+    "anxiety",
+    "dua",
+    "relief",
+    "worry"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_012",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6399",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي خطيئتي",
+   "tags": [
+    "dua",
+    "forgiveness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_013",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "6347",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من جهد البلاء",
+   "tags": [
+    "dua",
+    "hardship",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_014",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح البخاري",
+    "number": "5957",
+    "grade": "sahih"
+   },
+   "incipit": "أتوب إلى الله مما",
+   "tags": [
+    "dua",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_015",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "483",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي ذنبي كله",
+   "tags": [
+    "dua",
+    "forgiveness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_016",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "598",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم باعد بيني وبين خطاياي",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "prayer"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_017",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2042",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم بارك لهم فيما",
+   "tags": [
+    "dua",
+    "food",
+    "gratitude"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_018",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2055",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أطعم من أطعمني",
+   "tags": [
+    "dua",
+    "food",
+    "gratitude"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_019",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2654",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم مصرف القلوب",
+   "tags": [
+    "dua",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_020",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2697",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي وارحمني",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "mercy"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_021",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2716",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من شر",
+   "tags": [
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_022",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2720",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أصلح لي ديني",
+   "tags": [
+    "dua",
+    "general",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_023",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2721",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك الهدى",
+   "tags": [
+    "dua",
+    "guidance",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_024",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2722",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم آت نفسي تقواها",
+   "tags": [
+    "dua",
+    "purification"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_025",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2722",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من علم",
+   "tags": [
+    "dua",
+    "knowledge",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_026",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2719",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي ما قدمت",
+   "tags": [
+    "dua",
+    "forgiveness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_027",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2739",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من زوال",
+   "tags": [
+    "dua",
+    "gratitude",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_028",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "486",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أعوذ برضاك من سخطك",
+   "tags": [
+    "dua",
+    "protection",
+    "sujud"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_029",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "709",
+    "grade": "sahih"
+   },
+   "incipit": "رب قني عذابك",
+   "tags": [
+    "dua",
+    "hereafter",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_030",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2708",
+    "grade": "sahih"
+   },
+   "incipit": "أعوذ بكلمات الله التامات",
+   "tags": [
+    "dua",
+    "protection",
+    "travel"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_031",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2867",
+    "grade": "sahih"
+   },
+   "incipit": "أعوذ بالله من الفتن",
+   "tags": [
+    "dua",
+    "fitnah",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_032",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "770",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم رب جبرائيل وميكائيل",
+   "tags": [
+    "dua",
+    "guidance",
+    "night"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_033",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "771",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أنت الملك لا إله",
+   "tags": [
+    "dua",
+    "guidance",
+    "prayer"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_034",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2713",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم رب السموات ورب الأرض",
+   "tags": [
+    "dua",
+    "protection",
+    "sleep"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_035",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2713",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أنت الأول فليس",
+   "tags": [
+    "dua",
+    "relief",
+    "sleep"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_036",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "2717",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم لك أسلمت وبك",
+   "tags": [
+    "dua",
+    "travel",
+    "trust"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_037",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "484",
+    "grade": "sahih"
+   },
+   "incipit": "سبحان الله وبحمده أستغفر",
+   "tags": [
+    "dua",
+    "istighfar",
+    "tasbeeh"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_038",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح مسلم",
+    "number": "1742",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم منزل الكتاب",
+   "tags": [
+    "dua",
+    "hardship",
+    "victory"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_039",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "440",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك من",
+   "tags": [
+    "dua",
+    "mosque",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_040",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الترغيب",
+    "number": "654",
+    "grade": "sahih"
+   },
+   "incipit": "يا حي يا قيوم",
+   "tags": [
+    "distress",
+    "dua",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_041",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "4245",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم عافني في بدني",
+   "tags": [
+    "dua",
+    "health",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_042",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "4239",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك العافية",
+   "tags": [
+    "dua",
+    "health",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_043",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1368",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من الجوع",
+   "tags": [
+    "dua",
+    "protection",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_044",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "441",
+    "grade": "sahih"
+   },
+   "incipit": "أعوذ بالله العظيم",
+   "tags": [
+    "dua",
+    "mosque",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_045",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الكلم الطيب",
+    "number": "49",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني عبدك وابن",
+   "tags": [
+    "distress",
+    "dua",
+    "relief",
+    "sadness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_046",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "4246",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم رحمتك أرجو",
+   "tags": [
+    "dua",
+    "mercy",
+    "relief"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_047",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "710",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك الجنة",
+   "tags": [
+    "dua",
+    "hereafter",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_048",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "869",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك يا الله",
+   "tags": [
+    "dua",
+    "general"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_049",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1336",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي ما قدمت وما",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "night"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_050",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1347",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أعني على ذكرك",
+   "tags": [
+    "dhikr",
+    "dua",
+    "gratitude"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_051",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1369",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من علم لا",
+   "tags": [
+    "dua",
+    "knowledge",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_052",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1370",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من صلاة",
+   "tags": [
+    "dua",
+    "prayer",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_053",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1372",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من شر سمعي",
+   "tags": [
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_054",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1373",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من الهدم",
+   "tags": [
+    "dua",
+    "protection",
+    "travel"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_055",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1337",
+    "grade": "sahih"
+   },
+   "incipit": "رب أعني ولا تعن",
+   "tags": [
+    "dua",
+    "support",
+    "victory"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_056",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1337",
+    "grade": "sahih"
+   },
+   "incipit": "رب اجعلني لك شكارا",
+   "tags": [
+    "dua",
+    "gratitude",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_057",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1337",
+    "grade": "sahih"
+   },
+   "incipit": "رب تقبل توبتي",
+   "tags": [
+    "dua",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_058",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1375",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من البرص",
+   "tags": [
+    "dua",
+    "health",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_059",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1342",
+    "grade": "sahih"
+   },
+   "incipit": "رب اغفر لي وتب",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_060",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "701",
+    "grade": "sahih"
+   },
+   "incipit": "أعوذ بالله السميع العليم",
+   "tags": [
+    "dua",
+    "prayer",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_061",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1173",
+    "grade": "sahih"
+   },
+   "incipit": "الحمد لله رب العالمين",
+   "tags": [
+    "dua",
+    "gratitude"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_062",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1365",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من فتنة",
+   "tags": [
+    "dua",
+    "fitnah",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_063",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1343",
+    "grade": "sahih"
+   },
+   "incipit": "أستغفر الله الذي لا إله",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "istighfar"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_064",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1360",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إنا نجعلك في",
+   "tags": [
+    "dua",
+    "protection",
+    "travel"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_065",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "1366",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من الفقر",
+   "tags": [
+    "dua",
+    "protection",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_066",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن أبي داود",
+    "number": "4248",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم أعوذ بك أن أضل",
+   "tags": [
+    "dua",
+    "guidance",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_067",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2792",
+    "grade": "sahih"
+   },
+   "incipit": "يا مقلب القلوب ثبت",
+   "tags": [
+    "dua",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_068",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "411",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اهدني فيمن هديت",
+   "tags": [
+    "dua",
+    "guidance",
+    "qunut"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_069",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2580",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك فعل الخيرات",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "righteousness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_070",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2783",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اقسم لنا من خشيتك",
+   "tags": [
+    "dua",
+    "hereafter",
+    "taqwa"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_071",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2840",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من منكرات",
+   "tags": [
+    "character",
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_072",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2845",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم انفعني بما علمتني",
+   "tags": [
+    "dua",
+    "knowledge"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_073",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2798",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم فاطر السموات والأرض",
+   "tags": [
+    "dua",
+    "morning",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_074",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2854",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم متعني بسمعي",
+   "tags": [
+    "dua",
+    "health",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_075",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2730",
+    "grade": "sahih"
+   },
+   "incipit": "سبحانك اللهم وبحمدك",
+   "tags": [
+    "dua",
+    "gathering",
+    "istighfar"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_076",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح ابن حبان",
+    "number": "1974",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم لا سهل إلا",
+   "tags": [
+    "dua",
+    "ease",
+    "hardship"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_077",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن الترمذي",
+    "number": "2822",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اكفني بحلالك",
+   "tags": [
+    "debt",
+    "dua",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_078",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن النسائي",
+    "number": "1304",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم بعلمك الغيب",
+   "tags": [
+    "dua",
+    "general",
+    "istikharah"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_079",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن النسائي",
+    "number": "1304",
+    "grade": "sahih"
+   },
+   "incipit": "أسألك خشيتك في الغيب",
+   "tags": [
+    "dua",
+    "taqwa"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_080",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن النسائي",
+    "number": "1304",
+    "grade": "sahih"
+   },
+   "incipit": "أسألك الرضاء بالقضاء",
+   "tags": [
+    "contentment",
+    "dua"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_081",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن النسائي",
+    "number": "1304",
+    "grade": "sahih"
+   },
+   "incipit": "أعوذ بك من ضراء",
+   "tags": [
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_082",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن النسائي",
+    "number": "5227",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اهدني وسددني",
+   "tags": [
+    "dua",
+    "guidance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_083",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "3102",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك من الخير",
+   "tags": [
+    "dua",
+    "general",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_084",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "3102",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك من خير",
+   "tags": [
+    "dua",
+    "general"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_085",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "3102",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك الجنة",
+   "tags": [
+    "dua",
+    "hereafter"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_086",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "753",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك علما",
+   "tags": [
+    "dua",
+    "knowledge",
+    "mosque"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_087",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "625",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي ذنوبي",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_088",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "627",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اعصمني من الشيطان",
+   "tags": [
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_089",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "3106",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك المعافاة",
+   "tags": [
+    "dua",
+    "health",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_090",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح سنن ابن ماجه",
+    "number": "1217",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لحينا وميتنا",
+   "tags": [
+    "dua",
+    "forgiveness",
+    "funeral"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_091",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الجامع",
+    "number": "1265",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم اغفر لي ذنبي",
+   "tags": [
+    "character",
+    "dua",
+    "forgiveness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_092",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الأدب المفرد",
+    "number": "554",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك أن أشرك",
+   "tags": [
+    "dua",
+    "protection",
+    "shirk"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_093",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الجامع",
+    "number": "1260",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم احفظني بالإسلام",
+   "tags": [
+    "dua",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_094",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "السلسلة الصحيحة",
+    "number": "1194",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم قني شر نفسي",
+   "tags": [
+    "dua",
+    "protection",
+    "purification"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_095",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الجامع",
+    "number": "1299",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أعوذ بك من يوم",
+   "tags": [
+    "dua",
+    "hereafter",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_096",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الجامع",
+    "number": "1307",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم كما حسنت خلقي",
+   "tags": [
+    "character",
+    "dua"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_097",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "مسند أحمد",
+    "number": "18294",
+    "grade": "pending"
+   },
+   "incipit": "أتوب إلى الله وأستغفره",
+   "tags": [
+    "dua",
+    "istighfar",
+    "repentance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_098",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الأدب المفرد",
+    "number": "541",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم لك الحمد كله",
+   "tags": [
+    "dua",
+    "gratitude"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_099",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الأدب المفرد",
+    "number": "541",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك النعيم",
+   "tags": [
+    "dua",
+    "hereafter"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_100",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الأدب المفرد",
+    "number": "541",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم حبب إلينا الإيمان",
+   "tags": [
+    "dua",
+    "faith",
+    "guidance"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_101",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "صحيح الأدب المفرد",
+    "number": "541",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم توفنا مسلمين",
+   "tags": [
+    "death",
+    "dua",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_102",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "السلسلة الصحيحة",
+    "number": "1543",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك من فضلك",
+   "tags": [
+    "dua",
+    "rizq"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_103",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "السلسلة الصحيحة",
+    "number": "3444",
+    "grade": "sahih"
+   },
+   "incipit": "اللهم إني أسألك بعزتك",
+   "tags": [
+    "dua",
+    "general",
+    "protection"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  },
+  {
+   "id": "dua_s_104",
+   "category": "dua",
+   "time": "anytime",
+   "source": "sunnah",
+   "reference": {
+    "collection": "السلسلة الصحيحة",
+    "number": "1823",
+    "grade": "sahih"
+   },
+   "incipit": "يا ولي الإسلام وأهله",
+   "tags": [
+    "death",
+    "dua",
+    "steadfastness"
+   ],
+   "arabic": "",
+   "textStatus": "pending"
+  }
+ ]
+}
