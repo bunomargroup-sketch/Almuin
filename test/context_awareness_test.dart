@@ -1,4 +1,6 @@
 import 'package:almuin/features/adhkar/domain/dhikr.dart';
+import 'package:almuin/features/context_awareness/application/context_providers.dart';
+import 'package:almuin/features/context_awareness/data/news_source.dart';
 import 'package:almuin/features/context_awareness/domain/arabic_text.dart';
 import 'package:almuin/features/context_awareness/domain/context_topic.dart';
 import 'package:almuin/features/context_awareness/domain/contextual_matcher.dart';
@@ -205,6 +207,95 @@ void main() {
         final s = matcher.match(t, corpus);
         if (s != null) expect(s.reasonAr.trim(), isNotEmpty);
       }
+    });
+  });
+
+  group('NewsSource.parseTitles', () {
+    const rss = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Example Feed</title>
+  <item><title><![CDATA[قمة اقتصادية في الرياض]]></title></item>
+  <item><title>عشرات القتلى في فيضانات</title></item>
+  <item><title>Stock markets close higher</title></item>
+</channel></rss>
+''';
+
+    test('skips the channel title and unwraps CDATA', () {
+      final titles = NewsSource.parseTitles(rss);
+      expect(titles.length, 3);
+      expect(titles.first, 'قمة اقتصادية في الرياض');
+      expect(titles.any((t) => t.contains('CDATA')), isFalse);
+    });
+
+    test('a feed classifies to its most severe topic', () {
+      final titles = NewsSource.parseTitles(rss);
+      expect(const NewsTopicClassifier().classifyFeed(titles),
+          ContextTopic.calamity);
+    });
+
+    test('malformed input yields nothing rather than throwing', () {
+      expect(NewsSource.parseTitles(''), isEmpty);
+      expect(NewsSource.parseTitles('<rss><channel></channel></rss>'), isEmpty);
+    });
+  });
+
+  group('Topic arbitration', () {
+    test('the most severe signal wins', () {
+      expect(
+        pickTopic(
+          weather: ContextTopic.rain,
+          news: ContextTopic.calamity,
+          calendar: ContextTopic.friday,
+        ),
+        ContextTopic.calamity,
+      );
+    });
+
+    test('a tie prefers the more immediate source', () {
+      expect(
+        pickTopic(
+          weather: ContextTopic.rain,
+          news: ContextTopic.none,
+          calendar: ContextTopic.friday,
+        ),
+        ContextTopic.rain,
+      );
+    });
+
+    test('topics awaiting corpus never win', () {
+      // Earthquake is grave, but has no dhikr yet — the calendar must win
+      // rather than the app falling silent on a day it could have spoken.
+      expect(
+        pickTopic(
+          weather: ContextTopic.earthquake,
+          news: ContextTopic.none,
+          calendar: ContextTopic.friday,
+        ),
+        ContextTopic.friday,
+      );
+    });
+
+    test('no signals means silence', () {
+      expect(
+        pickTopic(
+          weather: ContextTopic.none,
+          news: ContextTopic.none,
+          calendar: ContextTopic.none,
+        ),
+        ContextTopic.none,
+      );
+    });
+  });
+
+  group('calendarTopic', () {
+    test('Friday is detected from the Gregorian weekday', () {
+      // 2026-08-07 is a Friday.
+      expect(calendarTopic(DateTime(2026, 8, 7)), ContextTopic.friday);
+    });
+
+    test('an ordinary weekday yields nothing', () {
+      expect(calendarTopic(DateTime(2026, 8, 5)), ContextTopic.none);
     });
   });
 }

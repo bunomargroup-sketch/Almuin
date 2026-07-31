@@ -25,6 +25,8 @@ class AppSettings {
     this.ttsEnabled = true,
     this.travelMode = false,
     this.batterySaver = false,
+    this.contextWeather = true,
+    this.contextNews = false,
     this.quietStartMinutes = 21 * 60 + 30,
     this.quietEndMinutes = 5 * 60 + 30,
     this.globalFrequency = FrequencyLevel.normal,
@@ -48,6 +50,18 @@ class AppSettings {
   // Smart-context toggles
   final bool travelMode;
   final bool batterySaver;
+
+  /// Suggest a dhikr from local weather (rain, storm, strong wind, extreme
+  /// heat or cold). On by default: it reuses the coarse coordinates already
+  /// held for prayer times and adds no new privacy surface.
+  final bool contextWeather;
+
+  /// Suggest a dhikr of patience when the day's news carries human loss.
+  ///
+  /// Off by default, deliberately. It is the only feature that reaches out to
+  /// a news source, and responding to world events — however carefully — is a
+  /// choice the user should make rather than inherit.
+  final bool contextNews;
   final int quietStartMinutes;
   final int quietEndMinutes;
   final FrequencyLevel globalFrequency;
@@ -75,6 +89,8 @@ class AppSettings {
     bool? ttsEnabled,
     bool? travelMode,
     bool? batterySaver,
+    bool? contextWeather,
+    bool? contextNews,
     int? quietStartMinutes,
     int? quietEndMinutes,
     FrequencyLevel? globalFrequency,
@@ -95,6 +111,8 @@ class AppSettings {
         ttsEnabled: ttsEnabled ?? this.ttsEnabled,
         travelMode: travelMode ?? this.travelMode,
         batterySaver: batterySaver ?? this.batterySaver,
+        contextWeather: contextWeather ?? this.contextWeather,
+        contextNews: contextNews ?? this.contextNews,
         quietStartMinutes: quietStartMinutes ?? this.quietStartMinutes,
         quietEndMinutes: quietEndMinutes ?? this.quietEndMinutes,
         globalFrequency: globalFrequency ?? this.globalFrequency,
@@ -115,6 +133,8 @@ class AppSettings {
         'ttsEnabled': ttsEnabled,
         'travelMode': travelMode,
         'batterySaver': batterySaver,
+        'contextWeather': contextWeather,
+        'contextNews': contextNews,
         'quietStartMinutes': quietStartMinutes,
         'quietEndMinutes': quietEndMinutes,
         'globalFrequency': globalFrequency.name,
@@ -138,6 +158,8 @@ class AppSettings {
         ttsEnabled: j['ttsEnabled'] as bool? ?? true,
         travelMode: j['travelMode'] as bool? ?? false,
         batterySaver: j['batterySaver'] as bool? ?? false,
+        contextWeather: j['contextWeather'] as bool? ?? true,
+        contextNews: j['contextNews'] as bool? ?? false,
         quietStartMinutes: (j['quietStartMinutes'] as num?)?.toInt() ?? 1290,
         quietEndMinutes: (j['quietEndMinutes'] as num?)?.toInt() ?? 330,
         globalFrequency: FrequencyLevel.values

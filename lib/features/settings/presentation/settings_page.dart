@@ -169,6 +169,24 @@ class SettingsPage extends ConsumerWidget {
                 onChanged: (v) =>
                     notifier.update((st) => st.copyWith(ttsEnabled: v)),
               ),
+              const Divider(height: 24),
+              SwitchListTile(
+                secondary: const Icon(Icons.cloud_outlined),
+                title: Text(l10n.settingsContextWeather),
+                subtitle: Text(l10n.settingsContextSection),
+                value: s.contextWeather,
+                onChanged: (v) =>
+                    notifier.update((st) => st.copyWith(contextWeather: v)),
+              ),
+              SwitchListTile(
+                secondary: const Icon(Icons.public_outlined),
+                title: Text(l10n.settingsContextNews),
+                subtitle: Text(l10n.settingsContextNewsHint),
+                isThreeLine: true,
+                value: s.contextNews,
+                onChanged: (v) =>
+                    notifier.update((st) => st.copyWith(contextNews: v)),
+              ),
               ListTile(
                 leading: const Icon(Icons.notifications_outlined),
                 title: const Text('معاينة إشعار'),

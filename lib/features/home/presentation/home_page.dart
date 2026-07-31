@@ -7,6 +7,8 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/extensions/context_x.dart';
 import '../../../core/theme/glass.dart';
 import '../../../core/utils/hijri_utils.dart';
+import '../../context_awareness/application/context_providers.dart';
+import '../../context_awareness/presentation/context_card.dart';
 import '../../gamification/application/gamification_providers.dart';
 import '../../statistics/presentation/statistics_page.dart' show progressWeekProvider;
 import '../domain/daily_content.dart';
@@ -37,6 +39,7 @@ class HomePage extends ConsumerWidget {
             ref.invalidate(streakProvider);
             ref.invalidate(recommendedDhikrProvider);
             ref.invalidate(progressWeekProvider);
+            ref.invalidate(contextSuggestionProvider);
           },
           child: ListView(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
@@ -115,6 +118,9 @@ class HomePage extends ConsumerWidget {
               ).animate().fadeIn(delay: 160.ms),
               const SizedBox(height: 20),
 
+              const ContextSuggestionCard()
+                  .animate()
+                  .fadeIn(delay: 180.ms),
               const TodayVerseCard().animate().fadeIn(delay: 200.ms),
               const SizedBox(height: 12),
               const TodayHadithCard().animate().fadeIn(delay: 240.ms),

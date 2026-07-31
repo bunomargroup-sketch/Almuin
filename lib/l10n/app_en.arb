@@ -145,5 +145,10 @@
   "notifReasonRamadan": "Ramadan — make the most of the month",
   "streakEncouragement": "MashaAllah, keep going! The most beloved deeds to Allah are the most consistent, even if small.",
   "favoritesEmpty": "No favorite adhkar yet",
-  "searchHint": "Search adhkar…"
+  "searchHint": "Search adhkar…",
+  "homeContextTitle": "Today's context",
+  "settingsContextSection": "Contextual suggestions",
+  "settingsContextWeather": "Based on your local weather",
+  "settingsContextNews": "On distressing news",
+  "settingsContextNewsHint": "Your device reads headlines locally to suggest a dhikr of patience when something grievous happens. No headline is shown, and no place or party is named."
 }
