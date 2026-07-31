@@ -71,15 +71,13 @@ class AiChatController extends Notifier<List<AiMessage>> {
               if (byId[id] != null) byId[id]!,
           ];
           if (reordered.isNotEmpty) {
-            // The one free-form string the model may return is sanitized
-            // before it can sit above our "verified sources" footer.
-            final empathy = sanitizeEmpathy(result.empathyAr);
+            // The model reorders; it writes nothing. introAr stays the
+            // deterministic, app-authored line for this intent, so no word
+            // the model produced ever reaches the screen.
             bundle = RecommendationBundle(
               intent: bundle.intent,
               items: reordered,
-              introAr: empathy.isNotEmpty
-                  ? '$empathy\n${bundle.introAr}'
-                  : bundle.introAr,
+              introAr: bundle.introAr,
             );
           }
         }

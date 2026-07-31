@@ -14,9 +14,15 @@ class RecommendationItem {
     this.noteAr = '',
     this.rewardAr = '',
     this.isVerse = false,
+    this.tags = const [],
   });
 
   final String id;
+
+  /// Topical tags. Sent to the remote ranker in place of the Arabic text: the
+  /// model needs a semantic signal, and tags give it one without exposing
+  /// scripture to a third party.
+  final List<String> tags;
   final String arabic;
   final String reference;
   final AuthenticityGrade grade;
@@ -31,6 +37,7 @@ class RecommendationItem {
         grade: d.bestGrade,
         noteAr: d.meaningAr,
         rewardAr: d.rewardAr,
+        tags: d.tags,
       );
 
   factory RecommendationItem.fromVerse(Verse v) => RecommendationItem(
