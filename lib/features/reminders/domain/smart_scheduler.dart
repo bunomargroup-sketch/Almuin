@@ -90,8 +90,13 @@ class SmartScheduler {
       // can roll past midnight, and anchoring to the reminder would then push
       // the pull-back target to the *following* evening (21h late, review H5).
       if (ctx.quietHours.contains(at)) {
-        final quietStart = DateTime(ctx.date.year, ctx.date.month, ctx.date.day)
+        var quietStart = DateTime(ctx.date.year, ctx.date.month, ctx.date.day)
             .add(Duration(minutes: ctx.quietHours.startMinutes - 10));
+        // Quiet hours beginning within 10 minutes of midnight would put the
+        // target on the *previous* day, sending the reminder into the past
+        // where the engine drops it silently. Never pull back past Isha.
+        final isha = p[AppPrayer.isha];
+        if (quietStart.isBefore(isha)) quietStart = isha;
         if (quietStart.isBefore(at)) at = quietStart;
       }
       out.add(_r(DhikrCategory.sleep, 'أذكار النوم', 'قبل النوم', at, 3));

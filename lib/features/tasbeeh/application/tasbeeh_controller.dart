@@ -13,6 +13,7 @@ class TasbeehState {
     this.dhikrId,
     this.target = 33,
     this.count = 0,
+    this.persisted = false,
     required this.startedAt,
   });
 
@@ -20,6 +21,15 @@ class TasbeehState {
   final String? dhikrId;
   final int target;
   final int count;
+
+  /// Whether this session has already been written to the database.
+  ///
+  /// Completing a round persists it immediately, but the beads stay on screen
+  /// afterwards. Without this flag the subsequent reset — or picking another
+  /// dhikr — would save the very same session a second time and inflate both
+  /// the daily total and the lifetime count (review H3).
+  final bool persisted;
+
   final DateTime startedAt;
 
   bool get reached => count >= target;
@@ -29,6 +39,7 @@ class TasbeehState {
     String? dhikrId,
     int? target,
     int? count,
+    bool? persisted,
     DateTime? startedAt,
   }) =>
       TasbeehState(
@@ -36,6 +47,7 @@ class TasbeehState {
         dhikrId: dhikrId ?? this.dhikrId,
         target: target ?? this.target,
         count: count ?? this.count,
+        persisted: persisted ?? this.persisted,
         startedAt: startedAt ?? this.startedAt,
       );
 }
@@ -69,7 +81,20 @@ class TasbeehController extends Notifier<TasbeehState> {
     );
   }
 
-  void setTarget(int target) => state = state.copyWith(target: target);
+  void setTarget(int target) {
+    if (state.persisted) {
+      // The finished round is already saved; raising the target must start a
+      // new session rather than reopening the saved one and counting it twice.
+      state = TasbeehState(
+        dhikrText: state.dhikrText,
+        dhikrId: state.dhikrId,
+        target: target,
+        startedAt: DateTime.now(),
+      );
+      return;
+    }
+    state = state.copyWith(target: target);
+  }
 
   /// One bead.
   Future<void> increment() async {
@@ -108,11 +133,13 @@ class TasbeehController extends Notifier<TasbeehState> {
   }
 
   Future<void> _persistIfMeaningful() async {
-    if (state.count > 0) await _persist(completed: state.reached);
+    if (state.count > 0 && !state.persisted) {
+      await _persist(completed: state.reached);
+    }
   }
 
   Future<void> _persist({required bool completed}) async {
-    if (state.count == 0) return;
+    if (state.count == 0 || state.persisted) return;
     await AppDatabase.instance.saveTasbeehSession(
       dhikrId: state.dhikrId,
       dhikrText: state.dhikrText,
@@ -124,6 +151,7 @@ class TasbeehController extends Notifier<TasbeehState> {
     if (state.dhikrId != null) {
       await AppDatabase.instance.markDhikrRead(state.dhikrId!);
     }
+    state = state.copyWith(persisted: true);
     ref.invalidate(tasbeehTodayProviderShim);
   }
 

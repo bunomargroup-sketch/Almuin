@@ -108,15 +108,21 @@ void main() {
     });
 
     test('Ramadan doubles Quran nudges', () {
-      final normal = scheduler
+      // Measured with the daily cap effectively lifted. Counting post-cap
+      // reminders made this assertion vacuous: the cap flattened the normal
+      // case to 1, so `ramadan >= normal * 2 - 1` held even with the doubling
+      // deleted outright.
+      const uncapped = SmartScheduler(maxPerDay: 1000);
+      final normal = uncapped
           .plan(ctx(day), allOn())
           .where((r) => r.category == DhikrCategory.quran)
           .length;
-      final ramadan = scheduler
+      final ramadan = uncapped
           .plan(ctx(day, ramadan: true), allOn())
           .where((r) => r.category == DhikrCategory.quran)
           .length;
-      expect(ramadan, greaterThanOrEqualTo(normal * 2 - 1));
+      expect(normal, greaterThan(0));
+      expect(ramadan, normal * 2);
     });
 
     test('travel mode adds travel-dua reminders', () {

@@ -26,6 +26,11 @@ Future<void> notificationBackgroundHandler(NotificationResponse r) async {
   final db = AppDatabase.instance;
   final notifId = r.id ?? 0;
 
+  // Any response at all proves the notification reached the shade. The
+  // foreground handler already records this; without the same call here, a
+  // reminder acted on while the app is closed stays 'scheduled' for ever.
+  await db.markDelivered(notifId);
+
   switch (r.actionId) {
     case AppConstants.actionDone:
       await db.completeByNotificationId(notifId);
@@ -237,18 +242,24 @@ class NotificationService {
     required String payload,
     String? reason,
     int? eventRowId,
+    String status = 'scheduled',
   }) async {
-    // Mark the planned delivery so the scheduler and stats stay in sync —
-    // and (for re-arms like snooze) point the row back at 'scheduled'.
+    // Mark the planned delivery so the scheduler and stats stay in sync.
+    //
+    // [status] matters for re-arms. A snoozed reminder must NOT go back to
+    // 'scheduled': the replan queries select exactly
+    // `status = 'scheduled' AND scheduled_at > now`, so a settings change or
+    // the 12-hourly background pass would cancel and delete the snoozed
+    // reminder during its own snooze window.
     if (eventRowId != null) {
       final d = await AppDatabase.instance.db;
       await d.update(
         'reminder_events',
         {
           'notification_id': notificationId,
-          'status': 'scheduled',
+          'status': status,
           'scheduled_at': when.toIso8601String(),
-          'snoozed_until': null,
+          if (status != 'snoozed') 'snoozed_until': null,
         },
         where: 'id = ?',
         whereArgs: [eventRowId],
@@ -310,6 +321,7 @@ class NotificationService {
       payload: original.payload ?? '/',
       reason: 'مؤجَّل',
       eventRowId: (event?['id'] as num?)?.toInt(),
+      status: 'snoozed',
     );
   }
 

@@ -91,6 +91,10 @@ String sanitizeEmpathy(String raw) {
   const markers = [
     'ﷺ', '﴿', '﴾', 'قال رسول', 'قال النبي', 'رواه', 'عن أبي', 'عن عبد',
     'حديث', 'آية', 'ﷲ',
+    // Quran attribution. Without these, 'قال الله تعالى ...' passed straight
+    // through and was rendered under the verified-sources footer.
+    'قال الله', 'قال تعالى', 'قال عز', 'يقول الله', 'يقول تعالى',
+    'في القرآن', 'سورة', 'الآية', 'صدق الله',
   ];
   if (markers.any(s.contains)) return '';
   if (s.length > 120) s = s.substring(0, 120);
