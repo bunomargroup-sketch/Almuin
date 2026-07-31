@@ -230,3 +230,51 @@ create index if not exists idx_user_progress_user    on public.user_progress(use
 create index if not exists idx_tasbeeh_sessions_user on public.tasbeeh_sessions(user_id, started_at);
 create index if not exists idx_reminder_events_user  on public.reminder_events(user_id, scheduled_at);
 create index if not exists idx_device_tokens_user    on public.device_tokens(user_id);
+
+-- ============================================================================
+-- AI usage metering
+-- ----------------------------------------------------------------------------
+-- The Supabase anon key ships inside the APK, so anyone who unpacks the app
+-- can call the ai-assistant function with a valid token. verify_jwt alone
+-- bounds *who* calls, not *how often*. Without a per-user cap an extracted key
+-- is an uncapped OpenAI bill.
+-- ============================================================================
+
+create table if not exists public.ai_usage (
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  day        date not null default current_date,
+  calls      integer not null default 0,
+  updated_at timestamptz not null default now(),
+  primary key (user_id, day)
+);
+
+alter table public.ai_usage enable row level security;
+-- No client policies: only the service role (which bypasses RLS) touches this.
+-- A user cannot read, forge or reset their own counter.
+
+-- Atomic increment. Read-then-write in the edge function would let concurrent
+-- requests slip past the cap; doing it in one statement closes that window.
+-- Returns false once the cap is reached, without incrementing further.
+create or replace function public.bump_ai_usage(p_user uuid, p_limit integer default 20)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_calls integer;
+begin
+  insert into public.ai_usage as u (user_id, day, calls, updated_at)
+  values (p_user, current_date, 1, now())
+  on conflict (user_id, day) do update
+    set calls = u.calls + 1, updated_at = now()
+    where u.calls < p_limit
+  returning u.calls into v_calls;
+
+  return v_calls is not null;
+end;
+$$;
+
+revoke all on function public.bump_ai_usage(uuid, integer) from public, anon, authenticated;
+
+create index if not exists idx_ai_usage_day on public.ai_usage(day);

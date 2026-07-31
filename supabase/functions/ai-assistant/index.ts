@@ -2,22 +2,36 @@
 // Almuin · ai-assistant (Supabase Edge Function, Deno)
 // ----------------------------------------------------------------------------
 // HARD SAFETY CONTRACT
-//   * Input: a user message + candidate items fetched from the *verified*
-//     local/DB content (id, arabic, reference, grade).
-//   * The model may ONLY: (a) pick a subset of those ids, and (b) write one
-//     short empathetic line (NOT Islamic content) in Arabic.
-//   * It may NEVER produce a verse, hadith, or dhikr text. Output is
-//     schema-validated twice: JSON shape + subset-of-candidates check.
-//   * Without an LLM key, deterministic keyword ranking runs instead.
+//   * Input: the user's described situation + candidate items already selected
+//     from the *verified* corpus (id, reference, grade, tags).
+//   * The model may do EXACTLY ONE thing: return a ranked subset of those ids.
+//     It returns no prose at all. There is no free-text field in the response
+//     schema, so there is nothing for a sanitizer to miss.
+//   * The candidates' Arabic text is never sent: the model ranks on reference,
+//     grade and tags. Less payload, less exposure, and it cannot echo text it
+//     never received.
+//   * Any id outside the candidate set voids the whole response and the
+//     deterministic ranking is used instead.
+//   * Without an LLM key, deterministic ranking runs instead.
+//
+// PRIVACY
+//   `user_situation` is the most sensitive thing this app handles — illness,
+//   debt, grief. It is forwarded to the model and then dropped. It is NEVER
+//   logged, and NEVER written to any table. Keep it that way.
+//
+// COST
+//   Every call is metered per authenticated user via bump_ai_usage(). The
+//   anon key ships inside the APK, so without this an extracted key is an
+//   uncapped bill.
 // ============================================================================
 
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 interface Candidate {
   id: string;
-  arabic: string;
   reference: string;
   grade: string;
+  tags: string[];
 }
 
 interface Req {
@@ -26,22 +40,34 @@ interface Req {
   candidates: Candidate[];
 }
 
-const SYSTEM_PROMPT = `You are "Almuin", a careful Islamic companion.
-STRICT RULES — violating any of them is a critical failure:
-1. You receive a numbered list of AUTHENTIC candidates (Quran/hadith/adhkar)
-   with references. You may ONLY select among them by their "id".
-2. NEVER write, quote, paraphrase, or invent any Quran, hadith, or dhikr text.
-   The only Arabic religious text the user will see comes from the candidates.
-3. Output JSON ONLY, exactly: {"selected_ids":[...], "empathy":"<one short
-   caring Arabic sentence about the user's feeling, no religious text>"}.
-4. Rank by relevance to the user's described situation. Prefer quran/sahih
-   grades. Never output ids that are not in the candidate list.
-5. If nothing fits, return an empty selected_ids list.`;
+const DAILY_CALL_LIMIT = Number(Deno.env.get("AI_DAILY_LIMIT") ?? "20");
+
+const SYSTEM_PROMPT = `You are a retrieval ranker for an Islamic app.
+
+You receive a person's described situation and a list of ALREADY-VERIFIED
+supplications, each with an id, a source reference, an authenticity grade and
+topical tags. You do not see their text and you do not need it.
+
+Your ONLY task: return the ids that best fit the situation, most relevant
+first.
+
+Output JSON only, exactly: {"selected_ids": ["...", "..."]}
+
+Rules:
+1. Every id you return MUST appear in the candidate list. Never invent one.
+2. Never write Arabic. Never write religious text of any kind. Never explain.
+   The response contains ids and nothing else.
+3. Prefer quran and sahih grades when relevance is comparable.
+4. Return at most 5 ids. If nothing genuinely fits, return an empty list —
+   an empty list is a correct and useful answer.`;
 
 serve(async (req: Request) => {
-  if (req.method !== "POST") {
-    return json({ error: "POST only" }, 405);
-  }
+  if (req.method !== "POST") return json({ error: "POST only" }, 405);
+
+  // verify_jwt=true means the gateway already checked the signature; we only
+  // need the subject to meter usage.
+  const userId = subjectOf(req.headers.get("Authorization"));
+  if (!userId) return json({ error: "forbidden" }, 403);
 
   let body: Req;
   try {
@@ -51,34 +77,35 @@ serve(async (req: Request) => {
   }
 
   const userText = (body.user_text ?? "").slice(0, 600);
-  // Review S2: the requester must never grow the prompt (and our OpenAI
-  // bill) without bound — cap item count and serialized field sizes.
   const candidates = (body.candidates ?? [])
     .slice(0, 30)
     .map((c) => ({
       id: String(c.id ?? "").slice(0, 80),
-      arabic: String(c.arabic ?? "").slice(0, 600),
       reference: String(c.reference ?? "").slice(0, 200),
       grade: String(c.grade ?? "").slice(0, 20),
+      tags: (Array.isArray(c.tags) ? c.tags : [])
+        .slice(0, 8)
+        .map((t) => String(t).slice(0, 40)),
     }));
 
-  if (candidates.length === 0) {
-    return json({ selected_ids: [], empathy: "" });
-  }
+  if (candidates.length === 0) return json({ selected_ids: [] });
 
   const candidateIds = new Set(candidates.map((c) => c.id));
   const apiKey = Deno.env.get("OPENAI_API_KEY");
 
-  // ---- No LLM key configured: deterministic keyword re-ranking ----------
   if (!apiKey) {
+    return json({ selected_ids: localRank(userText, candidates), mode: "local" });
+  }
+
+  // Metered before the paid call, not after.
+  const allowed = await bumpUsage(userId);
+  if (!allowed) {
     return json({
       selected_ids: localRank(userText, candidates),
-      empathy: "",
-      mode: "local",
+      mode: "quota",
     });
   }
 
-  // ---- LLM re-rank with hard subset validation ---------------------------
   try {
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -96,11 +123,7 @@ serve(async (req: Request) => {
             role: "user",
             content: JSON.stringify({
               user_situation: userText,
-              candidates: candidates.map((c) => ({
-                id: c.id,
-                reference: c.reference,
-                grade: c.grade,
-              })),
+              candidates,
             }),
           },
         ],
@@ -111,57 +134,77 @@ serve(async (req: Request) => {
     const data = await res.json();
     const parsed = JSON.parse(
       data.choices?.[0]?.message?.content ?? "{}",
-    ) as { selected_ids?: unknown; empathy?: unknown };
+    ) as { selected_ids?: unknown };
 
-    const selected = Array.isArray(parsed.selected_ids)
-      ? parsed.selected_ids.filter(
-          (x): x is string => typeof x === "string" && candidateIds.has(x),
-        )
-      : [];
+    const rawIds = Array.isArray(parsed.selected_ids) ? parsed.selected_ids : [];
 
-    // If the model returned anything outside the subset, discard ALL of it.
-    const rawIds = Array.isArray(parsed.selected_ids)
-      ? parsed.selected_ids
-      : [];
-    if (rawIds.some((x) => !candidateIds.has(x as string))) {
-      return json({ selected_ids: localRank(userText, candidates), empathy: "", mode: "fallback" });
+    // One id outside the set voids the entire response — a model that
+    // invents an id has demonstrably ignored the contract, so nothing it
+    // returned in that call is trustworthy.
+    if (rawIds.some((x) => typeof x !== "string" || !candidateIds.has(x))) {
+      return json({
+        selected_ids: localRank(userText, candidates),
+        mode: "fallback",
+      });
     }
 
-    const empathy = sanitizeEmpathy(parsed.empathy);
-
-    return json({ selected_ids: selected, empathy, mode: "llm" });
+    return json({ selected_ids: rawIds.slice(0, 5) as string[], mode: "llm" });
   } catch (_e) {
+    // Deliberately not logging the error object: it can contain the request
+    // body, and the request body is the user's situation.
     return json({
       selected_ids: localRank(userText, candidates),
-      empathy: "",
       mode: "fallback",
     });
   }
 });
 
-// Review S4: the app renders this line directly above a "verified sources"
-// footer — anything that looks like Quran/hadith text is dropped, the rest
-// is trimmed to one short sentence. The deterministic template intro stays
-// the default; this line only adds warmth.
-function sanitizeEmpathy(raw: unknown): string {
-  if (typeof raw !== "string") return "";
-  const s = raw.trim().replace(/\s+/g, " ");
-  if (!s) return "";
-  const markers = [
-    "ﷺ", "﴿", "﴾", "قال رسول", "قال النبي", "رواه", "عن أبي", "عن عبد",
-    "حديث", "آية", "ﷲ",
-    // Quran attribution. Without these, "قال الله تعالى ..." passed straight
-    // through and was rendered under the verified-sources footer.
-    "قال الله", "قال تعالى", "قال عز", "يقول الله", "يقول تعالى",
-    "في القرآن", "سورة", "الآية", "صدق الله",
-  ];
-  if (markers.some((m) => s.includes(m))) return "";
-  return s.slice(0, 120);
+/// Reads `sub` from an already-gateway-verified JWT. No signature check here
+/// on purpose — verify_jwt=true has done it before we run.
+function subjectOf(authHeader: string | null): string | null {
+  if (!authHeader?.startsWith("Bearer ")) return null;
+  const parts = authHeader.slice(7).split(".");
+  if (parts.length !== 3) return null;
+  try {
+    const pad = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    const payload = JSON.parse(atob(pad + "=".repeat((4 - pad.length % 4) % 4)));
+    const sub = payload?.sub;
+    return typeof sub === "string" && sub.length > 0 ? sub : null;
+  } catch {
+    return null;
+  }
 }
 
-// Simple keyword mirror of the on-device ranker (kept dependency-free).
+/// Atomically increments today's counter, returning false once the cap is hit.
+/// The atomicity lives in the SQL function: doing read-then-write here would
+/// let concurrent requests slip past the limit.
+async function bumpUsage(userId: string): Promise<boolean> {
+  const url = Deno.env.get("SUPABASE_URL");
+  const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  // Fail OPEN if metering is misconfigured: a broken counter should not deny
+  // someone a supplication. The cap protects the bill, not correctness.
+  if (!url || !key) return true;
+  try {
+    const res = await fetch(`${url}/rest/v1/rpc/bump_ai_usage`, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ p_user: userId, p_limit: DAILY_CALL_LIMIT }),
+    });
+    if (!res.ok) return true;
+    return (await res.json()) !== false;
+  } catch {
+    return true;
+  }
+}
+
+/// Deterministic mirror of the on-device ranker. Tag overlap plus grade —
+/// no Arabic text is available here by design.
 function localRank(text: string, candidates: Candidate[]): string[] {
-  const t = text.toLowerCase();
+  const words = text.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
   const gradeWeight: Record<string, number> = {
     quran: 3, sahih: 2, hasan: 1, daif: -99, custom: -1,
   };
@@ -169,15 +212,16 @@ function localRank(text: string, candidates: Candidate[]): string[] {
     .map((c) => ({
       id: c.id,
       score: (gradeWeight[c.grade] ?? 0) +
-        (t.split(/\s+/).some((w) => w.length > 3 && c.arabic.includes(w)) ? 1 : 0),
+        c.tags.filter((t) => words.some((w) => t.toLowerCase().includes(w)))
+          .length,
     }))
     .sort((a, b) => b.score - a.score)
     .slice(0, 5)
     .map((x) => x.id);
 }
 
-function json(payload: unknown, status = 200) {
-  return new Response(JSON.stringify(payload), {
+function json(body: unknown, status = 200): Response {
+  return new Response(JSON.stringify(body), {
     status,
     headers: { "Content-Type": "application/json" },
   });
